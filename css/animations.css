@@ -1,0 +1,120 @@
+/* ═══════════════════════════════════════════════════════
+   ANIMATIONS — Scroll Reveals, Keyframes, Transitions
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Scroll Reveal Base ── */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s var(--ease-out),
+              transform 0.7s var(--ease-out);
+}
+
+.reveal-up.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for grid children */
+.about__card.reveal-up:nth-child(2),
+.testimonial.reveal-up:nth-child(2),
+.gallery__item.reveal-up:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.about__card.reveal-up:nth-child(3),
+.testimonial.reveal-up:nth-child(3),
+.gallery__item.reveal-up:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.gallery__item.reveal-up:nth-child(4) {
+  transition-delay: 0.15s;
+}
+
+.gallery__item.reveal-up:nth-child(5) {
+  transition-delay: 0.25s;
+}
+
+.event-card.reveal-up:nth-child(2) { transition-delay: 0.1s; }
+.event-card.reveal-up:nth-child(3) { transition-delay: 0.2s; }
+
+.faq__item.reveal-up:nth-child(2) { transition-delay: 0.05s; }
+.faq__item.reveal-up:nth-child(3) { transition-delay: 0.1s; }
+.faq__item.reveal-up:nth-child(4) { transition-delay: 0.15s; }
+.faq__item.reveal-up:nth-child(5) { transition-delay: 0.2s; }
+
+
+/* ── Gradient Border Glow (for focused elements) ── */
+@keyframes border-glow {
+  0%, 100% {
+    border-color: var(--color-primary-500);
+    box-shadow: 0 0 8px rgba(92, 124, 250, 0.15);
+  }
+  50% {
+    border-color: var(--color-primary-400);
+    box-shadow: 0 0 16px rgba(92, 124, 250, 0.25);
+  }
+}
+
+/* ── Pulse ── */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.05); }
+}
+
+/* ── Fade In ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Slide Up ── */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Counter animation class ── */
+.counting {
+  display: inline-block;
+}
+
+/* ── Hero entry animation ── */
+.hero__content > .reveal-up:nth-child(1) { transition-delay: 0.1s; }
+.hero__content > .reveal-up:nth-child(2) { transition-delay: 0.2s; }
+.hero__content > .reveal-up:nth-child(3) { transition-delay: 0.35s; }
+.hero__content > .reveal-up:nth-child(4) { transition-delay: 0.5s; }
+.hero__content > .reveal-up:nth-child(5) { transition-delay: 0.65s; }
+
+/* ── Nav entry ── */
+.site-header {
+  animation: slideDown 0.5s var(--ease-out) 0.1s both;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Mobile nav animations ── */
+.nav__links--mobile-open {
+  animation: fadeIn var(--duration-normal) var(--ease-out);
+}
+
+/* ── Form success ── */
+.contact-form__success:not([hidden]) {
+  animation: slideUp 0.5s var(--ease-spring);
+}

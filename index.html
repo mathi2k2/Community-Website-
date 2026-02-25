@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bloomfield Community — Join our vibrant community of creators, thinkers, and doers. Events, workshops, networking, and more.">
+  <meta name="theme-color" content="#1a1a2e">
+  <title>Bloomfield — Community Hub</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bloomfield Community">
+  <meta property="og:description" content="Join our vibrant community of creators, thinkers, and doers.">
+  <meta property="og:type" content="website">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- Skip Navigation for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- HEADER / NAVIGATION                        -->
+  <!-- ═══════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="nav" role="navigation" aria-label="Primary navigation">
+        <a href="#hero" class="nav__logo" aria-label="Bloomfield — Back to top">
+          <svg class="nav__logo-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <circle cx="18" cy="18" r="16" stroke="currentColor" stroke-width="2"/>
+            <path d="M18 6C18 6 24 12 24 18C24 24 18 30 18 30C18 30 12 24 12 18C12 12 18 6 18 6Z" fill="currentColor" opacity="0.3"/>
+            <path d="M6 18C6 18 12 12 18 12C24 12 30 18 30 18C30 18 24 24 18 24C12 24 6 18 6 18Z" fill="currentColor" opacity="0.3"/>
+            <circle cx="18" cy="18" r="4" fill="currentColor"/>
+          </svg>
+          <span class="nav__logo-text">Bloomfield</span>
+        </a>
+
+        <ul class="nav__links" id="nav-links" role="list">
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#events" class="nav__link">Events</a></li>
+          <li><a href="#community" class="nav__link">Community</a></li>
+          <li><a href="#gallery" class="nav__link">Gallery</a></li>
+          <li><a href="#faq" class="nav__link">FAQ</a></li>
+          <li><a href="#contact" class="nav__link nav__link--cta">Join Us</a></li>
+        </ul>
+
+        <div class="nav__actions">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" type="button">
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+
+          <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links" type="button">
+            <span class="nav__hamburger-line"></span>
+            <span class="nav__hamburger-line"></span>
+            <span class="nav__hamburger-line"></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- HERO SECTION                               -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__gradient"></div>
+        <div class="hero__particles" id="hero-particles"></div>
+        <div class="hero__grid-overlay"></div>
+      </div>
+
+      <div class="container hero__content">
+        <span class="hero__badge reveal-up">Est. 2024</span>
+        <h1 class="hero__title reveal-up" id="hero-heading">
+          Where Ideas<br>
+          <span class="hero__title-accent">Bloom</span>
+        </h1>
+        <p class="hero__subtitle reveal-up">
+          Bloomfield is a community of creators, builders, and thinkers
+          who come together to learn, share, and grow. Join us and be part
+          of something extraordinary.
+        </p>
+        <div class="hero__cta-group reveal-up">
+          <a href="#contact" class="btn btn--primary btn--lg">
+            Become a Member
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+          <a href="#about" class="btn btn--outline btn--lg">Learn More</a>
+        </div>
+
+        <div class="hero__stats reveal-up">
+          <div class="hero__stat">
+            <span class="hero__stat-number" data-count="250">0</span>
+            <span class="hero__stat-label">Members</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-number" data-count="48">0</span>
+            <span class="hero__stat-label">Events Held</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-number" data-count="12">0</span>
+            <span class="hero__stat-label">Active Projects</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- ABOUT SECTION                              -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="section about" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__label reveal-up">Who We Are</span>
+          <h2 class="section__title reveal-up" id="about-heading">
+            More Than a Club.<br>A <span class="text-accent">Movement</span>.
+          </h2>
+          <p class="section__description reveal-up">
+            Bloomfield was founded on a simple belief: when passionate people
+            come together, incredible things happen. We're a diverse collective
+            united by curiosity and the drive to make an impact.
+          </p>
+        </header>
+
+        <div class="about__grid">
+          <article class="about__card reveal-up" aria-labelledby="about-learn">
+            <div class="about__card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+            </div>
+            <h3 id="about-learn" class="about__card-title">Learn Together</h3>
+            <p class="about__card-text">
+              Weekly workshops, skill-sharing sessions, and study groups covering
+              everything from tech and design to business and personal growth.
+            </p>
+          </article>
+
+          <article class="about__card reveal-up" aria-labelledby="about-build">
+            <div class="about__card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+              </svg>
+            </div>
+            <h3 id="about-build" class="about__card-title">Build Together</h3>
+            <p class="about__card-text">
+              Collaborate on real projects that matter. From community apps
+              to creative ventures, we turn ideas into reality as a team.
+            </p>
+          </article>
+
+          <article class="about__card reveal-up" aria-labelledby="about-grow">
+            <div class="about__card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3 id="about-grow" class="about__card-title">Grow Together</h3>
+            <p class="about__card-text">
+              Mentorship, networking events, and a supportive environment
+              designed to help every member reach their full potential.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- EVENTS SECTION                             -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="section events" id="events" aria-labelledby="events-heading">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__label reveal-up">What's Happening</span>
+          <h2 class="section__title reveal-up" id="events-heading">
+            Upcoming <span class="text-accent">Events</span>
+          </h2>
+          <p class="section__description reveal-up">
+            From casual meetups to flagship conferences, there's always
+            something happening at Bloomfield.
+          </p>
+        </header>
+
+        <div class="events__grid">
+          <article class="event-card reveal-up" aria-labelledby="event-1">
+            <div class="event-card__date">
+              <span class="event-card__month">MAR</span>
+              <span class="event-card__day">15</span>
+            </div>
+            <div class="event-card__content">
+              <span class="event-card__tag event-card__tag--workshop">Workshop</span>
+              <h3 id="event-1" class="event-card__title">Design Systems 101</h3>
+              <p class="event-card__text">
+                Learn how to build scalable design systems from scratch.
+                Perfect for designers and developers alike.
+              </p>
+              <div class="event-card__meta">
+                <span class="event-card__time">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  2:00 PM — 5:00 PM
+                </span>
+                <span class="event-card__location">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Community Hall
+                </span>
+              </div>
+            </div>
+            <a href="#contact" class="event-card__link" aria-label="Register for Design Systems 101">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </article>
+
+          <article class="event-card reveal-up" aria-labelledby="event-2">
+            <div class="event-card__date">
+              <span class="event-card__month">MAR</span>
+              <span class="event-card__day">22</span>
+            </div>
+            <div class="event-card__content">
+              <span class="event-card__tag event-card__tag--social">Social</span>
+              <h3 id="event-2" class="event-card__title">Spring Networking Mixer</h3>
+              <p class="event-card__text">
+                Our quarterly mixer! Meet fellow members, share projects,
+                and enjoy an evening of good conversation.
+              </p>
+              <div class="event-card__meta">
+                <span class="event-card__time">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  6:00 PM — 9:00 PM
+                </span>
+                <span class="event-card__location">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Rooftop Lounge
+                </span>
+              </div>
+            </div>
+            <a href="#contact" class="event-card__link" aria-label="Register for Spring Networking Mixer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </article>
+
+          <article class="event-card reveal-up" aria-labelledby="event-3">
+            <div class="event-card__date">
+              <span class="event-card__month">APR</span>
+              <span class="event-card__day">05</span>
+            </div>
+            <div class="event-card__content">
+              <span class="event-card__tag event-card__tag--hackathon">Hackathon</span>
+              <h3 id="event-3" class="event-card__title">Bloom Hack 2025</h3>
+              <p class="event-card__text">
+                48 hours to build something amazing. Teams of 2-4.
+                Prizes, mentors, and all the coffee you can drink.
+              </p>
+              <div class="event-card__meta">
+                <span class="event-card__time">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  Fri 6PM — Sun 6PM
+                </span>
+                <span class="event-card__location">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Innovation Lab
+                </span>
+              </div>
+            </div>
+            <a href="#contact" class="event-card__link" aria-label="Register for Bloom Hack 2025">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- COMMUNITY / TESTIMONIALS                   -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="section community" id="community" aria-labelledby="community-heading">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__label reveal-up">Our People</span>
+          <h2 class="section__title reveal-up" id="community-heading">
+            Hear From the <span class="text-accent">Community</span>
+          </h2>
+          <p class="section__description reveal-up">
+            Real stories from real members. Here's what being part of
+            Bloomfield means to the people who make it special.
+          </p>
+        </header>
+
+        <div class="testimonials__grid">
+          <blockquote class="testimonial reveal-up">
+            <div class="testimonial__stars" aria-label="5 out of 5 stars">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="testimonial__text">
+              "Joining Bloomfield was the best decision I made this year. The
+              workshops are incredible, and the people are genuinely supportive.
+              I've learned more here in 3 months than in a year on my own."
+            </p>
+            <footer class="testimonial__author">
+              <div class="testimonial__avatar" aria-hidden="true">AK</div>
+              <div>
+                <cite class="testimonial__name">Aisha K.</cite>
+                <span class="testimonial__role">UX Designer &middot; Member since 2024</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial reveal-up">
+            <div class="testimonial__stars" aria-label="5 out of 5 stars">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="testimonial__text">
+              "The hackathon changed everything for me. I met my co-founder here,
+              and now we're building a startup together. Bloomfield doesn't just
+              talk about community — they live it."
+            </p>
+            <footer class="testimonial__author">
+              <div class="testimonial__avatar" aria-hidden="true">MR</div>
+              <div>
+                <cite class="testimonial__name">Marcus R.</cite>
+                <span class="testimonial__role">Full-Stack Dev &middot; Member since 2024</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial reveal-up">
+            <div class="testimonial__stars" aria-label="5 out of 5 stars">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="testimonial__text">
+              "As someone who just moved to the area, Bloomfield gave me an instant
+              network of amazing people. The events are well-organized, the
+              atmosphere is welcoming, and I always leave inspired."
+            </p>
+            <footer class="testimonial__author">
+              <div class="testimonial__avatar" aria-hidden="true">SL</div>
+              <div>
+                <cite class="testimonial__name">Sarah L.</cite>
+                <span class="testimonial__role">Product Manager &middot; Member since 2025</span>
+              </div>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- GALLERY SECTION                            -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="section gallery" id="gallery" aria-labelledby="gallery-heading">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__label reveal-up">Moments</span>
+          <h2 class="section__title reveal-up" id="gallery-heading">
+            Life at <span class="text-accent">Bloomfield</span>
+          </h2>
+          <p class="section__description reveal-up">
+            A snapshot of the energy, creativity, and connections that
+            define our community.
+          </p>
+        </header>
+
+        <div class="gallery__grid">
+          <div class="gallery__item gallery__item--wide reveal-up">
+            <div class="gallery__placeholder" aria-label="Community meetup photo">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>Community Meetup</span>
+            </div>
+          </div>
+          <div class="gallery__item reveal-up">
+            <div class="gallery__placeholder" aria-label="Workshop session photo">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>Workshop Session</span>
+            </div>
+          </div>
+          <div class="gallery__item reveal-up">
+            <div class="gallery__placeholder" aria-label="Hackathon teams photo">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>Hackathon Teams</span>
+            </div>
+          </div>
+          <div class="gallery__item reveal-up">
+            <div class="gallery__placeholder" aria-label="Networking event photo">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>Networking Night</span>
+            </div>
+          </div>
+          <div class="gallery__item gallery__item--wide reveal-up">
+            <div class="gallery__placeholder" aria-label="Annual summit photo">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>Annual Summit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- FAQ SECTION                                -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="section faq" id="faq" aria-labelledby="faq-heading">
+      <div class="container container--narrow">
+        <header class="section__header">
+          <span class="section__label reveal-up">Questions</span>
+          <h2 class="section__title reveal-up" id="faq-heading">
+            Frequently <span class="text-accent">Asked</span>
+          </h2>
+        </header>
+
+        <div class="faq__list" role="list">
+          <details class="faq__item reveal-up" role="listitem">
+            <summary class="faq__question">
+              What is Bloomfield and who is it for?
+              <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq__answer">
+              <p>
+                Bloomfield is an open community for anyone who wants to learn,
+                create, and connect. Whether you're a student, professional,
+                hobbyist, or just curious — you belong here. We welcome all
+                skill levels, backgrounds, and disciplines.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item reveal-up" role="listitem">
+            <summary class="faq__question">
+              How much does membership cost?
+              <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq__answer">
+              <p>
+                Bloomfield's core membership is completely free. Some premium
+                events and workshops may have a small fee to cover materials
+                and venue costs, but the majority of our programming is
+                open to all members at no charge.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item reveal-up" role="listitem">
+            <summary class="faq__question">
+              How often do you host events?
+              <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq__answer">
+              <p>
+                We host events weekly — typically 2-3 per week ranging from
+                casual coffee chats to structured workshops and monthly
+                flagship events. Check our events section for the latest
+                schedule, or join our mailing list to stay updated.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item reveal-up" role="listitem">
+            <summary class="faq__question">
+              Can I host my own event or workshop?
+              <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq__answer">
+              <p>
+                Absolutely! We actively encourage members to lead sessions
+                on topics they're passionate about. Reach out through our
+                contact form or speak with any organizer at an event. We'll
+                help you plan, promote, and run your session.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item reveal-up" role="listitem">
+            <summary class="faq__question">
+              I'm new to the area. Will I fit in?
+              <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq__answer">
+              <p>
+                100%. Many of our most active members started exactly where you
+                are. We have dedicated "welcome events" for newcomers, and our
+                community culture prioritizes inclusivity. You'll feel at home
+                from day one.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- CONTACT / JOIN SECTION                     -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-heading">
+      <div class="container container--narrow">
+        <header class="section__header">
+          <span class="section__label reveal-up">Get Involved</span>
+          <h2 class="section__title reveal-up" id="contact-heading">
+            Ready to <span class="text-accent">Join</span>?
+          </h2>
+          <p class="section__description reveal-up">
+            Fill out the form below and we'll get you set up. Welcome to Bloomfield.
+          </p>
+        </header>
+
+        <form class="contact-form reveal-up" id="contact-form" aria-label="Membership registration form" novalidate>
+          <div class="contact-form__group">
+            <label for="form-name" class="contact-form__label">Full Name</label>
+            <input
+              type="text"
+              id="form-name"
+              name="name"
+              class="contact-form__input"
+              placeholder="Your full name"
+              required
+              autocomplete="name"
+            >
+            <span class="contact-form__error" aria-live="polite"></span>
+          </div>
+
+          <div class="contact-form__group">
+            <label for="form-email" class="contact-form__label">Email Address</label>
+            <input
+              type="email"
+              id="form-email"
+              name="email"
+              class="contact-form__input"
+              placeholder="you@example.com"
+              required
+              autocomplete="email"
+            >
+            <span class="contact-form__error" aria-live="polite"></span>
+          </div>
+
+          <div class="contact-form__group">
+            <label for="form-interest" class="contact-form__label">What interests you most?</label>
+            <select id="form-interest" name="interest" class="contact-form__select" required>
+              <option value="" disabled selected>Choose an area...</option>
+              <option value="workshops">Workshops &amp; Learning</option>
+              <option value="networking">Networking &amp; Socials</option>
+              <option value="hackathons">Hackathons &amp; Projects</option>
+              <option value="mentorship">Mentorship</option>
+              <option value="all">A bit of everything!</option>
+            </select>
+            <span class="contact-form__error" aria-live="polite"></span>
+          </div>
+
+          <div class="contact-form__group">
+            <label for="form-message" class="contact-form__label">Anything else? <span class="contact-form__optional">(Optional)</span></label>
+            <textarea
+              id="form-message"
+              name="message"
+              class="contact-form__textarea"
+              placeholder="Tell us about yourself, what you're looking for, or any questions you have..."
+              rows="4"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg btn--full" id="form-submit">
+            <span class="btn__text">Join Bloomfield</span>
+            <span class="btn__loader" aria-hidden="true"></span>
+            <svg class="btn__check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </button>
+
+          <div class="contact-form__success" id="form-success" role="alert" aria-live="polite" hidden>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <p><strong>Welcome aboard!</strong> Check your inbox for next steps.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- FOOTER                                     -->
+  <!-- ═══════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#hero" class="nav__logo" aria-label="Bloomfield — Back to top">
+            <svg class="nav__logo-icon" width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+              <circle cx="18" cy="18" r="16" stroke="currentColor" stroke-width="2"/>
+              <path d="M18 6C18 6 24 12 24 18C24 24 18 30 18 30C18 30 12 24 12 18C12 12 18 6 18 6Z" fill="currentColor" opacity="0.3"/>
+              <path d="M6 18C6 18 12 12 18 12C24 12 30 18 30 18C30 18 24 24 18 24C12 24 6 18 6 18Z" fill="currentColor" opacity="0.3"/>
+              <circle cx="18" cy="18" r="4" fill="currentColor"/>
+            </svg>
+            <span class="nav__logo-text">Bloomfield</span>
+          </a>
+          <p class="footer__tagline">Where ideas bloom into reality.</p>
+        </div>
+
+        <div class="footer__links">
+          <h3 class="footer__heading">Quick Links</h3>
+          <ul role="list">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#community">Community</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__links">
+          <h3 class="footer__heading">Connect</h3>
+          <ul role="list">
+            <li><a href="#contact">Join Us</a></li>
+            <li><a href="mailto:hello@bloomfield.community">Email Us</a></li>
+            <li><a href="#" aria-label="Bloomfield on Instagram">Instagram</a></li>
+            <li><a href="#" aria-label="Bloomfield on Twitter / X">Twitter / X</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; <span id="footer-year"></span> Bloomfield Community. Built with passion.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "bloomfield-community-website",
+  "version": "1.0.0",
+  "description": "Official website for the Bloomfield Community — events, membership, news, and more.",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx live-server --port=3000 --open=index.html",
+    "lint:css": "npx stylelint 'css/**/*.css'",
+    "lint:js": "npx eslint 'js/**/*.js'",
+    "format": "npx prettier --write '**/*.{html,css,js,json,md}'"
+  },
+  "keywords": [
+    "bloomfield",
+    "community",
+    "club",
+    "website",
+    "frontend"
+  ],
+  "author": "mathi2k2",
+  "license": "MIT",
+  "devDependencies": {}
+}

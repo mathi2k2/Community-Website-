@@ -1,0 +1,59 @@
+/* ═══════════════════════════════════════════════════════
+   LAYOUT — Containers, Grid Systems, Structural
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Container ── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+/* ── Sections ── */
+.section {
+  padding-block: var(--space-3xl);
+  position: relative;
+}
+
+.section:nth-child(even) {
+  background-color: var(--bg-secondary);
+}
+
+/* ── Section Header ── */
+.section__header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.section__label {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-primary-500);
+  margin-bottom: var(--space-sm);
+  padding: var(--space-2xs) var(--space-sm);
+  background: linear-gradient(135deg,
+    rgba(92, 124, 250, 0.1),
+    rgba(92, 124, 250, 0.05));
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(92, 124, 250, 0.15);
+}
+
+.section__title {
+  margin-bottom: var(--space-md);
+}
+
+.section__description {
+  font-size: var(--fs-md);
+  max-width: 55ch;
+  margin-inline: auto;
+}

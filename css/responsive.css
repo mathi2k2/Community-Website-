@@ -1,0 +1,230 @@
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — Mobile-First Breakpoints
+   ═══════════════════════════════════════════════════════ */
+
+/* ═══════════ TABLET & BELOW (< 1024px) ═══════════ */
+@media (max-width: 1023px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-inline: auto;
+  }
+
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery__item--wide {
+    grid-column: span 2;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__brand {
+    grid-column: span 2;
+    margin-bottom: var(--space-md);
+  }
+}
+
+
+/* ═══════════ MOBILE NAV (< 768px) ═══════════ */
+@media (max-width: 767px) {
+  .nav__hamburger {
+    display: flex;
+  }
+
+  .nav__links {
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    background: var(--bg-primary);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--duration-normal) var(--ease-out),
+                visibility var(--duration-normal);
+    z-index: var(--z-nav);
+  }
+
+  .nav__links.nav__links--open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav__link {
+    font-size: var(--fs-xl);
+    padding: var(--space-sm) var(--space-lg);
+  }
+
+  .nav__link--cta {
+    margin-top: var(--space-sm);
+    font-size: var(--fs-lg);
+  }
+
+  /* Hero adjustments */
+  .hero__stats {
+    gap: var(--space-lg);
+  }
+
+  .hero__stat-number {
+    font-size: var(--fs-2xl);
+  }
+
+  .hero__scroll-indicator {
+    display: none;
+  }
+
+  /* Event cards stack */
+  .event-card {
+    flex-direction: column;
+  }
+
+  .event-card__date {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    gap: var(--space-xs);
+    padding: var(--space-sm);
+  }
+
+  .event-card__link {
+    align-self: flex-start;
+  }
+
+  /* Gallery single column */
+  .gallery__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery__item--wide {
+    grid-column: span 1;
+  }
+
+  /* Footer */
+  .footer__grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer__brand {
+    grid-column: span 1;
+  }
+
+  .site-footer .nav__logo {
+    justify-content: center;
+  }
+
+  .footer__links ul {
+    align-items: center;
+  }
+}
+
+
+/* ═══════════ SMALL MOBILE (< 480px) ═══════════ */
+@media (max-width: 479px) {
+  .hero__cta-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__cta-group .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .hero__stats {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .event-card__meta {
+    flex-direction: column;
+    gap: var(--space-2xs);
+  }
+}
+
+
+/* ═══════════ WIDE SCREENS (>= 1024px) ═══════════ */
+@media (min-width: 1024px) {
+  .about__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .testimonials__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* ═══════════ LARGE SCREENS (>= 1400px) ═══════════ */
+@media (min-width: 1400px) {
+  :root {
+    --container-max: 1320px;
+  }
+}
+
+
+/* ═══════════ HOVER CAPABILITY ═══════════ */
+@media (hover: none) {
+  .about__card:hover,
+  .event-card:hover,
+  .testimonial:hover {
+    transform: none;
+    box-shadow: var(--card-shadow);
+  }
+}
+
+
+/* ═══════════ HIGH CONTRAST ═══════════ */
+@media (prefers-contrast: high) {
+  :root {
+    --border-color: var(--gray-700);
+    --card-border: var(--gray-600);
+  }
+
+  .hero__grid-overlay {
+    display: none;
+  }
+}
+
+
+/* ═══════════ PRINT STYLES ═══════════ */
+@media print {
+  .site-header,
+  .hero__bg,
+  .hero__scroll-indicator,
+  .theme-toggle,
+  .nav__hamburger,
+  .btn,
+  .gallery__grid,
+  .contact-form {
+    display: none !important;
+  }
+
+  body {
+    color: #000;
+    background: #fff;
+    font-size: 12pt;
+  }
+
+  .section {
+    padding-block: 1rem;
+    page-break-inside: avoid;
+  }
+
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+}
