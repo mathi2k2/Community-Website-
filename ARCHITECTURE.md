@@ -13,12 +13,24 @@ members, visitors, local businesses, and the broader cricket community.
 ### About the Club
 The club name references the historic **Bloomfield Cricket and Athletic Club** in
 Colombo, Sri Lanka (est. 1892) — a common naming convention among South Asian
-diaspora cricket communities (also seen in New Zealand). BCCC operates within the
-**Manitoba Cricket Association (MCA)** ecosystem, which runs **58 teams across
-5 divisions** (Elite, Premier, Division 1, 2, 3) plus a T20 format during
-Manitoba's summer season. The MCA uses **CricketSASA** for live scoring — our
-platform is complementary (stats archive, club identity, community features),
-not a replacement for match-day scoring.
+diaspora cricket communities. BCCC operates within the **Manitoba Cricket
+Association (MCA)** ecosystem, which runs **58 teams across 5 divisions** (Elite,
+Premier, Division 1, 2, 3) plus a T20 format during Manitoba's summer season. The
+MCA uses **CricketSASA** for live scoring — our platform is complementary (stats
+archive, club identity, community features), not a replacement for match-day scoring.
+
+**BCCC in the Manitoba Cricket League:**
+- **Premier Division** team
+- **Division 2** team
+- **Division 3** team
+- **Recreational** team (4th team, casual/development)
+- Total: **4 teams** (3 competitive + 1 recreational)
+
+**Softball (Tennis Ball) Cricket:**
+- Fundraiser events using tennis ball format
+- Mock auction system — players are "bought" by team captains
+- All scores and stats tracked for bragging rights and future auctions
+- Community-wide participation (not just registered MCA players)
 
 ### Who Uses It
 
@@ -35,7 +47,7 @@ not a replacement for match-day scoring.
 1. **Public Club Info** — what the club has done, is doing, and will do
 2. **Business Directory** — local businesses advertise to the community
 3. **Event Ticketing** — buy tickets for events via Stripe
-4. **Cricket Stats Engine** — softball (fundraisers/auctions) + hardball (Manitoba Cricket League)
+4. **Cricket Stats Engine** — tennis ball (fundraisers/auctions) + hardball (Manitoba Cricket League, 4 teams)
 5. **Marketplace** — buy/sell within the community
 6. **Blog** — member stories and experiences
 
@@ -119,8 +131,8 @@ players
 ├── last_name         TEXT NOT NULL
 ├── nickname          TEXT
 ├── photo_url         TEXT
-├── plays_softball    BOOLEAN DEFAULT false
-├── plays_hardball    BOOLEAN DEFAULT false
+├── plays_tennis_ball BOOLEAN DEFAULT false (tennis ball/fundraiser format)
+├── plays_hardball    BOOLEAN DEFAULT false (Manitoba Cricket League)
 ├── batting_style     ENUM ('right_hand', 'left_hand')
 ├── bowling_style     TEXT (e.g., 'right_arm_medium', 'left_arm_spin')
 ├── is_active         BOOLEAN DEFAULT true
@@ -130,18 +142,19 @@ players
 teams
 ├── id                UUID (PK)
 ├── name              TEXT NOT NULL
-├── league            ENUM ('softball_fundraiser', 'manitoba_cricket_league')
+├── league            ENUM ('tennis_ball', 'mcl_premier', 'mcl_div2', 'mcl_div3', 'mcl_recreational')
 ├── season_id         UUID (FK → seasons.id)
 ├── captain_id        UUID (FK → players.id)
 ├── logo_url          TEXT
 ├── color             TEXT (hex color for UI)
+├── division          TEXT (e.g., 'Premier', 'Division 2', 'Division 3', 'Recreational')
 ├── created_at        TIMESTAMPTZ
 └── updated_at        TIMESTAMPTZ
 
 seasons
 ├── id                UUID (PK)
 ├── year              INTEGER NOT NULL
-├── league            ENUM ('softball_fundraiser', 'manitoba_cricket_league')
+├── league            ENUM ('tennis_ball', 'manitoba_cricket_league')
 ├── name              TEXT (e.g., "Summer 2025", "Fundraiser Gala 2025")
 ├── is_active         BOOLEAN DEFAULT false
 ├── start_date        DATE
@@ -154,7 +167,7 @@ team_players (junction table — players belong to teams per season)
 ├── team_id           UUID (FK → teams.id)
 ├── player_id         UUID (FK → players.id)
 ├── season_id         UUID (FK → seasons.id)
-├── auction_price     DECIMAL (nullable — only for softball fundraiser auctions)
+├── auction_price     DECIMAL (nullable — only for tennis ball fundraiser auctions)
 ├── is_captain        BOOLEAN DEFAULT false
 ├── created_at        TIMESTAMPTZ
 └── UNIQUE(team_id, player_id, season_id)
@@ -162,7 +175,7 @@ team_players (junction table — players belong to teams per season)
 matches
 ├── id                UUID (PK)
 ├── season_id         UUID (FK → seasons.id)
-├── league            ENUM ('softball_fundraiser', 'manitoba_cricket_league')
+├── league            ENUM ('tennis ball_fundraiser', 'manitoba_cricket_league')
 ├── match_number      INTEGER
 ├── team_a_id         UUID (FK → teams.id)
 ├── team_b_id         UUID (FK → teams.id)
@@ -175,7 +188,7 @@ matches
 ├── winner_id         UUID (FK → teams.id, nullable for ties/draws)
 ├── result_summary    TEXT (e.g., "Team A won by 14 runs")
 ├── match_type        TEXT (e.g., 'league', 'semifinal', 'final', 'friendly')
-├── overs_per_side    INTEGER (e.g., 20 for T20, 6 for softball)
+├── overs_per_side    INTEGER (e.g., 20 for T20, 6 for tennis ball)
 ├── status            ENUM ('upcoming', 'in_progress', 'completed', 'cancelled')
 ├── created_at        TIMESTAMPTZ
 └── updated_at        TIMESTAMPTZ
@@ -228,7 +241,7 @@ auctions
 - `team_players` junction table handles the fact that players change teams between seasons (especially with the auction)
 - `auction_price` lives on `team_players` because a player's price is per-season, per-team
 - Both `batting_innings` and `bowling_innings` per match allow full scorecard reconstruction
-- `league` enum cleanly separates softball fundraiser stats from Manitoba Cricket League stats
+- `league` enum cleanly separates tennis ball fundraiser stats from Manitoba Cricket League stats
 - Aggregate stats (career batting average, strike rate, etc.) are computed via **database views**, not stored — always accurate, never stale
 
 ### 3.3 Database Views (Computed Stats)
@@ -514,7 +527,7 @@ PUBLIC PAGES
 /cricket/teams/[id]                Team Detail                  No       Roster, match results, standings
 /cricket/matches                   Match Results                No       Filterable by season/league
 /cricket/matches/[id]              Match Scorecard              No       Full batting/bowling scorecard
-/cricket/leaderboard               Leaderboard                  No       Top batsmen, bowlers — toggle softball/hardball
+/cricket/leaderboard               Leaderboard                  No       Top batsmen, bowlers — toggle tennis ball/hardball
 /cricket/auction                   Auction Results              No       Per-season auction results, player values
 /marketplace                       Marketplace                  No       Browse listings
 /marketplace/[id]                  Listing Detail               No       Photos, description, contact seller (auth)
@@ -622,7 +635,7 @@ POST   /api/profile/avatar               Upload avatar
 - `<MatchCard />` — match summary (teams, scores, result)
 - `<TeamBadge />` — team color + logo inline
 - `<SeasonSelector />` — dropdown to switch seasons
-- `<LeagueToggle />` — softball ↔ hardball switch
+- `<LeagueToggle />` — tennis ball ↔ hardball switch
 - `<AuctionBoard />` — auction results grid (player, team, price)
 - `<MiniScorecard />` — compact version for sidebar/homepage
 
@@ -677,7 +690,7 @@ POST   /api/profile/avatar               Upload avatar
 - [ ] Public: Match results list (filterable by season, league)
 - [ ] Public: Match scorecard page (full batting/bowling details)
 - [ ] Public: Player directory with search
-- [ ] Public: Player profile — career stats for softball + hardball
+- [ ] Public: Player profile — career stats for tennis ball + hardball
 - [ ] Public: Team page — roster, results, standings
 - [ ] Public: Leaderboard — top batsmen, bowlers, toggle by format
 - [ ] Public: Auction results page
