@@ -28,13 +28,8 @@
   transition-delay: 0.2s;
 }
 
-.gallery__item.reveal-up:nth-child(4) {
-  transition-delay: 0.15s;
-}
-
-.gallery__item.reveal-up:nth-child(5) {
-  transition-delay: 0.25s;
-}
+.gallery__item.reveal-up:nth-child(4) { transition-delay: 0.15s; }
+.gallery__item.reveal-up:nth-child(5) { transition-delay: 0.25s; }
 
 .event-card.reveal-up:nth-child(2) { transition-delay: 0.1s; }
 .event-card.reveal-up:nth-child(3) { transition-delay: 0.2s; }
@@ -44,8 +39,13 @@
 .faq__item.reveal-up:nth-child(4) { transition-delay: 0.15s; }
 .faq__item.reveal-up:nth-child(5) { transition-delay: 0.2s; }
 
+/* Team card stagger */
+.team__card.reveal-up:nth-child(2) { transition-delay: 0.1s; }
+.team__card.reveal-up:nth-child(3) { transition-delay: 0.2s; }
+.team__card.reveal-up:nth-child(4) { transition-delay: 0.3s; }
 
-/* ── Gradient Border Glow (for focused elements) ── */
+
+/* ── Gradient Border Glow ── */
 @keyframes border-glow {
   0%, 100% {
     border-color: var(--color-primary-500);
@@ -81,17 +81,12 @@
   }
 }
 
-/* ── Counter animation class ── */
-.counting {
-  display: inline-block;
-}
-
 /* ── Hero entry animation ── */
-.hero__content > .reveal-up:nth-child(1) { transition-delay: 0.1s; }
-.hero__content > .reveal-up:nth-child(2) { transition-delay: 0.2s; }
-.hero__content > .reveal-up:nth-child(3) { transition-delay: 0.35s; }
-.hero__content > .reveal-up:nth-child(4) { transition-delay: 0.5s; }
-.hero__content > .reveal-up:nth-child(5) { transition-delay: 0.65s; }
+.hero__content > .reveal-up:nth-child(1) { transition-delay: 0.3s; }
+.hero__content > .reveal-up:nth-child(2) { transition-delay: 0.45s; }
+.hero__content > .reveal-up:nth-child(3) { transition-delay: 0.6s; }
+.hero__content > .reveal-up:nth-child(4) { transition-delay: 0.75s; }
+.hero__content > .reveal-up:nth-child(5) { transition-delay: 0.9s; }
 
 /* ── Nav entry ── */
 .site-header {
@@ -117,4 +112,9 @@
 /* ── Form success ── */
 .contact-form__success:not([hidden]) {
   animation: slideUp 0.5s var(--ease-spring);
+}
+
+/* ── Active nav link indicator ── */
+.nav__link--active {
+  color: var(--color-primary-500) !important;
 }

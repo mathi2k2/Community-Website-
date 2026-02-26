@@ -1,9 +1,55 @@
 /* ═══════════════════════════════════════════════════════
    INTERACTIVE COMPONENTS
-   Form validation, hero particles, and other UI logic.
+   Preloader, form validation, hero particles, mouse glow,
+   back-to-top, and other UI logic.
    ═══════════════════════════════════════════════════════ */
 
 const Components = (() => {
+
+  /* ═══════════ PRELOADER ═══════════ */
+
+  function initPreloader() {
+    const preloader = document.getElementById("preloader");
+    if (!preloader) return;
+
+    window.addEventListener("load", () => {
+      // Small delay so the animation is visible
+      setTimeout(() => {
+        preloader.classList.add("preloader--hidden");
+        // Remove from DOM after transition
+        preloader.addEventListener("transitionend", () => {
+          preloader.remove();
+        }, { once: true });
+      }, 600);
+    });
+  }
+
+  /* ═══════════ HERO MOUSE GLOW ═══════════ */
+
+  function initMouseGlow() {
+    const hero = document.querySelector(".hero");
+    const glow = document.getElementById("hero-mouse-glow");
+    if (!hero || !glow) return;
+
+    // Skip on touch devices
+    if (window.matchMedia("(hover: none)").matches) return;
+    // Skip if reduced motion
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    hero.addEventListener("mousemove", (e) => {
+      const rect = hero.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      glow.style.left = x + "px";
+      glow.style.top = y + "px";
+      glow.classList.add("active");
+    });
+
+    hero.addEventListener("mouseleave", () => {
+      glow.classList.remove("active");
+    });
+  }
+
   /* ═══════════ CONTACT FORM ═══════════ */
 
   function initContactForm() {
@@ -118,6 +164,34 @@ const Components = (() => {
     }
   }
 
+  /* ═══════════ BACK TO TOP ═══════════ */
+
+  function initBackToTop() {
+    const btn = document.getElementById("back-to-top");
+    if (!btn) return;
+
+    // Show/hide based on scroll position
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          if (window.scrollY > 600) {
+            btn.classList.add("visible");
+          } else {
+            btn.classList.remove("visible");
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Scroll to top on click
+    btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
   /* ═══════════ FOOTER YEAR ═══════════ */
 
   function initFooterYear() {
@@ -130,8 +204,11 @@ const Components = (() => {
   /* ═══════════ INIT ═══════════ */
 
   function init() {
+    initPreloader();
+    initMouseGlow();
     initContactForm();
     initParticles();
+    initBackToTop();
     initFooterYear();
   }
 

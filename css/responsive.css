@@ -10,6 +10,10 @@
     margin-inline: auto;
   }
 
+  .team__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .testimonials__grid {
     grid-template-columns: 1fr;
     max-width: 520px;
@@ -101,6 +105,13 @@
     align-self: flex-start;
   }
 
+  /* Team 2 col on tablet, 1 col on mobile */
+  .team__grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin-inline: auto;
+  }
+
   /* Gallery single column */
   .gallery__grid {
     grid-template-columns: 1fr;
@@ -108,6 +119,11 @@
 
   .gallery__item--wide {
     grid-column: span 1;
+  }
+
+  /* Contact form row stack */
+  .contact-form__row {
+    grid-template-columns: 1fr;
   }
 
   /* Footer */
@@ -124,8 +140,20 @@
     justify-content: center;
   }
 
+  .footer__social {
+    justify-content: center;
+  }
+
   .footer__links ul {
     align-items: center;
+  }
+
+  /* Back to top smaller on mobile */
+  .back-to-top {
+    bottom: var(--space-md);
+    right: var(--space-md);
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
 
@@ -151,6 +179,10 @@
     flex-direction: column;
     gap: var(--space-2xs);
   }
+
+  .cta-banner__title {
+    font-size: var(--fs-2xl);
+  }
 }
 
 
@@ -162,6 +194,10 @@
 
   .testimonials__grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .team__grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -178,9 +214,19 @@
 @media (hover: none) {
   .about__card:hover,
   .event-card:hover,
-  .testimonial:hover {
+  .testimonial:hover,
+  .team__card:hover {
     transform: none;
     box-shadow: var(--card-shadow);
+  }
+
+  .gallery__art-overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .hero__mouse-glow {
+    display: none;
   }
 }
 
@@ -207,7 +253,11 @@
   .nav__hamburger,
   .btn,
   .gallery__grid,
-  .contact-form {
+  .contact-form,
+  .preloader,
+  .marquee,
+  .cta-banner,
+  .back-to-top {
     display: none !important;
   }
 
