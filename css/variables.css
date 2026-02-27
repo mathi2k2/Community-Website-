@@ -4,17 +4,17 @@
    ═══════════════════════════════════════════════════════ */
 
 :root {
-  /* ── Color Palette ── */
-  --color-primary-50:  #f0f4ff;
-  --color-primary-100: #dbe4ff;
-  --color-primary-200: #bac8ff;
-  --color-primary-300: #91a7ff;
-  --color-primary-400: #748ffc;
-  --color-primary-500: #5c7cfa;
-  --color-primary-600: #4c6ef5;
-  --color-primary-700: #4263eb;
-  --color-primary-800: #3b5bdb;
-  --color-primary-900: #364fc7;
+  /* ── Color Palette (Cricket Green + Gold) ── */
+  --color-primary-50:  #f0faf4;
+  --color-primary-100: #d1f0dc;
+  --color-primary-200: #a3e0ba;
+  --color-primary-300: #6dcc93;
+  --color-primary-400: #44b86e;
+  --color-primary-500: #2d9d54;
+  --color-primary-600: #1a7a3d;
+  --color-primary-700: #1a5632;
+  --color-primary-800: #174a2b;
+  --color-primary-900: #133d24;
 
   --color-accent-400:  #ffd43b;
   --color-accent-500:  #fcc419;
@@ -84,7 +84,7 @@
   --shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.05);
   --shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.05);
   --shadow-xl:  0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.05);
-  --shadow-glow: 0 0 20px rgb(92 124 250 / 0.3);
+  --shadow-glow: 0 0 20px rgb(45 157 84 / 0.3);
 
   /* ── Transitions ── */
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
@@ -125,7 +125,7 @@
   --border-color:   var(--gray-200);
   --border-subtle:  var(--gray-100);
 
-  --hero-bg:       linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  --hero-bg:       linear-gradient(135deg, #0d1f12 0%, #133d24 50%, #1a5632 100%);
   --hero-text:     #ffffff;
 
   --card-bg:       #ffffff;
@@ -160,7 +160,7 @@
   --border-color:   rgba(255, 255, 255, 0.08);
   --border-subtle:  rgba(255, 255, 255, 0.04);
 
-  --hero-bg:       linear-gradient(135deg, #0d0f14 0%, #111528 50%, #0f1a35 100%);
+  --hero-bg:       linear-gradient(135deg, #0a0f0c 0%, #0d1f12 50%, #112a18 100%);
   --hero-text:     #ffffff;
 
   --card-bg:       #1a1e2b;
@@ -177,7 +177,7 @@
   --shadow-md:  0 4px 8px rgb(0 0 0 / 0.25);
   --shadow-lg:  0 10px 20px rgb(0 0 0 / 0.3);
   --shadow-xl:  0 20px 40px rgb(0 0 0 / 0.35);
-  --shadow-glow: 0 0 30px rgb(92 124 250 / 0.2);
+  --shadow-glow: 0 0 30px rgb(45 157 84 / 0.2);
 
   color-scheme: dark;
 }

@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bloomfield BCCC — A vibrant community of creators, thinkers, and doers. Events, workshops, networking, and more.">
-  <meta name="theme-color" content="#1a1a2e">
-  <title>Bloomfield BCCC — Community Hub</title>
+  <meta name="description" content="Bloomfield Cricket Club — Manitoba's premier cricket community. Matches, events, player profiles, and more.">
+  <meta name="theme-color" content="#1a5632">
+  <title>Bloomfield Cricket Club — Manitoba</title>
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Bloomfield BCCC">
-  <meta property="og:description" content="A vibrant community of creators, thinkers, and doers.">
+  <meta property="og:title" content="Bloomfield Cricket Club">
+  <meta property="og:description" content="Manitoba's premier cricket community. Join us on the pitch.">
   <meta property="og:type" content="website">
 
-  <!-- Favicon (inline SVG data URI) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><circle cx='18' cy='18' r='16' fill='%234c6ef5'/><circle cx='18' cy='18' r='4' fill='white'/></svg>">
+  <!-- Favicon (cricket ball) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><circle cx='18' cy='18' r='16' fill='%23c0392b'/><path d='M10 8 Q18 18 10 28' stroke='white' stroke-width='1.5' fill='none'/><path d='M26 8 Q18 18 26 28' stroke='white' stroke-width='1.5' fill='none'/></svg>">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/reset.css">
@@ -33,11 +33,11 @@
     <div class="preloader__inner">
       <svg class="preloader__logo" width="60" height="60" viewBox="0 0 36 36" fill="none">
         <circle cx="18" cy="18" r="16" stroke="currentColor" stroke-width="2" class="preloader__circle"/>
-        <path d="M18 6C18 6 24 12 24 18C24 24 18 30 18 30C18 30 12 24 12 18C12 12 18 6 18 6Z" fill="currentColor" opacity="0.3"/>
-        <path d="M6 18C6 18 12 12 18 12C24 12 30 18 30 18C30 18 24 24 18 24C12 24 6 18 6 18Z" fill="currentColor" opacity="0.3"/>
+        <path d="M12 8 Q18 18 12 28" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/>
+        <path d="M24 8 Q18 18 24 28" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/>
         <circle cx="18" cy="18" r="4" fill="currentColor"/>
       </svg>
-      <span class="preloader__text">BCCC</span>
+      <span class="preloader__text">Bloomfield CC</span>
     </div>
   </div>
 
@@ -50,21 +50,20 @@
   <header class="site-header" role="banner">
     <div class="container">
       <nav class="nav" role="navigation" aria-label="Primary navigation">
-        <a href="#hero" class="nav__logo" aria-label="Bloomfield BCCC — Back to top">
+        <a href="#hero" class="nav__logo" aria-label="Bloomfield Cricket Club — Back to top">
           <svg class="nav__logo-icon" width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
             <circle cx="18" cy="18" r="16" stroke="currentColor" stroke-width="2"/>
-            <path d="M18 6C18 6 24 12 24 18C24 24 18 30 18 30C18 30 12 24 12 18C12 12 18 6 18 6Z" fill="currentColor" opacity="0.3"/>
-            <path d="M6 18C6 18 12 12 18 12C24 12 30 18 30 18C30 18 24 24 18 24C12 24 6 18 6 18Z" fill="currentColor" opacity="0.3"/>
+            <path d="M12 8 Q18 18 12 28" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
+            <path d="M24 8 Q18 18 24 28" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
             <circle cx="18" cy="18" r="4" fill="currentColor"/>
           </svg>
-          <span class="nav__logo-text">Bloomfield <span class="nav__logo-accent">BCCC</span></span>
+          <span class="nav__logo-text">Bloomfield <span class="nav__logo-accent">CC</span></span>
         </a>
 
         <ul class="nav__links" id="nav-links" role="list">
           <li><a href="#about" class="nav__link">About</a></li>
           <li><a href="#events" class="nav__link">Events</a></li>
-          <li><a href="#team" class="nav__link">Team</a></li>
-          <li><a href="#community" class="nav__link">Community</a></li>
+          <li><a href="#cricket" class="nav__link">Cricket</a></li>
           <li><a href="#gallery" class="nav__link">Gallery</a></li>
           <li><a href="#faq" class="nav__link">FAQ</a></li>
           <li><a href="#contact" class="nav__link nav__link--cta">Join Us</a></li>
@@ -100,45 +99,44 @@
     <!-- ═══════════════════════════════════════════ -->
     <section class="hero" id="hero" aria-labelledby="hero-heading">
       <div class="hero__bg" aria-hidden="true">
-        <div class="hero__gradient"></div>
+        <div class="hero__image" style="background-image: url('assets/images/hero-action-1.jpg')"></div>
+        <div class="hero__overlay"></div>
         <div class="hero__particles" id="hero-particles"></div>
-        <div class="hero__grid-overlay"></div>
         <div class="hero__mouse-glow" id="hero-mouse-glow"></div>
       </div>
 
       <div class="container hero__content">
-        <span class="hero__badge reveal-up">Est. 2024</span>
+        <span class="hero__badge reveal-up">Est. 2024 &middot; Manitoba Cricket Association</span>
         <h1 class="hero__title reveal-up" id="hero-heading">
-          Where Ideas<br>
-          <span class="hero__title-accent">Bloom</span>
+          Bloomfield<br>
+          <span class="hero__title-accent">Cricket Club</span>
         </h1>
         <p class="hero__subtitle reveal-up">
-          Bloomfield BCCC is a community of creators, builders, and thinkers
-          who come together to learn, share, and grow. Join us and be part
-          of something extraordinary.
+          Manitoba's home for competitive and recreational cricket.
+          Three teams, one community — united by the love of the game.
         </p>
         <div class="hero__cta-group reveal-up">
           <a href="#contact" class="btn btn--primary btn--lg">
-            Become a Member
+            Join the Club
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
-          <a href="#about" class="btn btn--outline btn--lg">Learn More</a>
+          <a href="#cricket" class="btn btn--outline btn--lg">Our Teams</a>
         </div>
 
         <div class="hero__stats reveal-up">
           <div class="hero__stat">
-            <span class="hero__stat-number" data-count="250">0</span>
-            <span class="hero__stat-label">Members</span>
+            <span class="hero__stat-number" data-count="3">0</span>
+            <span class="hero__stat-label">Teams</span>
           </div>
           <div class="hero__stat">
-            <span class="hero__stat-number" data-count="48">0</span>
-            <span class="hero__stat-label">Events Held</span>
+            <span class="hero__stat-number" data-count="7">0</span>
+            <span class="hero__stat-label">Consecutive Wins</span>
           </div>
           <div class="hero__stat">
-            <span class="hero__stat-number" data-count="12">0</span>
-            <span class="hero__stat-label">Active Projects</span>
+            <span class="hero__stat-number" data-count="2024">0</span>
+            <span class="hero__stat-label">Season</span>
           </div>
         </div>
       </div>
@@ -155,40 +153,40 @@
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
         <div class="marquee__content">
-          <span class="marquee__item">Community First</span>
+          <span class="marquee__item">MCA Premier Division</span>
           <span class="marquee__separator">&mdash;</span>
-          <span class="marquee__item">Learn Together</span>
+          <span class="marquee__item">Division 2 League</span>
           <span class="marquee__separator">&mdash;</span>
-          <span class="marquee__item">Build Together</span>
+          <span class="marquee__item">Recreational T20</span>
           <span class="marquee__separator">&mdash;</span>
-          <span class="marquee__item">Grow Together</span>
+          <span class="marquee__item">Bloomfield CC</span>
           <span class="marquee__separator">&mdash;</span>
-          <span class="marquee__item">Open to All</span>
+          <span class="marquee__item">Bloomfield Knights</span>
           <span class="marquee__separator">&mdash;</span>
-          <span class="marquee__item">Bloomfield BCCC</span>
+          <span class="marquee__item">Bloomfield All Stars</span>
           <span class="marquee__separator">&mdash;</span>
-          <span class="marquee__item">Create Impact</span>
+          <span class="marquee__item">Cricket Community</span>
           <span class="marquee__separator">&mdash;</span>
-          <span class="marquee__item">Share Knowledge</span>
+          <span class="marquee__item">Winnipeg, Manitoba</span>
           <span class="marquee__separator">&mdash;</span>
         </div>
         <!-- Duplicate for seamless loop -->
         <div class="marquee__content" aria-hidden="true">
-          <span class="marquee__item">Community First</span>
+          <span class="marquee__item">MCA Premier Division</span>
           <span class="marquee__separator">&mdash;</span>
-          <span class="marquee__item">Learn Together</span>
+          <span class="marquee__item">Division 2 League</span>
           <span class="marquee__separator">&mdash;</span>
-          <span class="marquee__item">Build Together</span>
+          <span class="marquee__item">Recreational T20</span>
           <span class="marquee__separator">&mdash;</span>
-          <span class="marquee__item">Grow Together</span>
+          <span class="marquee__item">Bloomfield CC</span>
           <span class="marquee__separator">&mdash;</span>
-          <span class="marquee__item">Open to All</span>
+          <span class="marquee__item">Bloomfield Knights</span>
           <span class="marquee__separator">&mdash;</span>
-          <span class="marquee__item">Bloomfield BCCC</span>
+          <span class="marquee__item">Bloomfield All Stars</span>
           <span class="marquee__separator">&mdash;</span>
-          <span class="marquee__item">Create Impact</span>
+          <span class="marquee__item">Cricket Community</span>
           <span class="marquee__separator">&mdash;</span>
-          <span class="marquee__item">Share Knowledge</span>
+          <span class="marquee__item">Winnipeg, Manitoba</span>
           <span class="marquee__separator">&mdash;</span>
         </div>
       </div>
@@ -202,52 +200,58 @@
         <header class="section__header">
           <span class="section__label reveal-up">Who We Are</span>
           <h2 class="section__title reveal-up" id="about-heading">
-            More Than a Club.<br>A <span class="text-accent">Movement</span>.
+            More Than a Club.<br>A <span class="text-accent">Cricket Family</span>.
           </h2>
           <p class="section__description reveal-up">
-            Bloomfield BCCC was founded on a simple belief: when passionate people
-            come together, incredible things happen. We're a diverse collective
-            united by curiosity and the drive to make an impact.
+            Bloomfield Cricket Club brings together cricket lovers of all levels
+            in Winnipeg, Manitoba. From competitive premier division matches
+            to recreational T20 games, we play hard and build community.
           </p>
         </header>
 
         <div class="about__grid">
-          <article class="about__card reveal-up" aria-labelledby="about-learn">
+          <article class="about__card reveal-up" aria-labelledby="about-compete">
             <div class="about__card-icon">
+              <!-- Cricket bat icon -->
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                <line x1="18" y1="2" x2="6" y2="18" stroke-linecap="round"/>
+                <path d="M5 17 L3 22 L8 20 Z" fill="currentColor" opacity="0.3"/>
+                <circle cx="19" cy="3" r="2"/>
               </svg>
             </div>
-            <h3 id="about-learn" class="about__card-title">Learn Together</h3>
+            <h3 id="about-compete" class="about__card-title">Compete Together</h3>
             <p class="about__card-text">
-              Weekly workshops, skill-sharing sessions, and study groups covering
-              everything from tech and design to business and personal growth.
-            </p>
-          </article>
-
-          <article class="about__card reveal-up" aria-labelledby="about-build">
-            <div class="about__card-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
-              </svg>
-            </div>
-            <h3 id="about-build" class="about__card-title">Build Together</h3>
-            <p class="about__card-text">
-              Collaborate on real projects that matter. From community apps
-              to creative ventures, we turn ideas into reality as a team.
+              Three teams competing across MCA Premier Division, Division 2,
+              and Recreational T20 leagues. Serious cricket with a supportive atmosphere.
             </p>
           </article>
 
           <article class="about__card reveal-up" aria-labelledby="about-grow">
             <div class="about__card-icon">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
               </svg>
             </div>
             <h3 id="about-grow" class="about__card-title">Grow Together</h3>
             <p class="about__card-text">
-              Mentorship, networking events, and a supportive environment
-              designed to help every member reach their full potential.
+              Player development programs, practice matches, and mentorship from
+              experienced cricketers. Every skill level is welcome on our pitch.
+            </p>
+          </article>
+
+          <article class="about__card reveal-up" aria-labelledby="about-celebrate">
+            <div class="about__card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/>
+              </svg>
+            </div>
+            <h3 id="about-celebrate" class="about__card-title">Celebrate Together</h3>
+            <p class="about__card-text">
+              Community events, annual awards nights, and social gatherings that
+              strengthen the bonds beyond the boundary rope.
             </p>
           </article>
         </div>
@@ -260,97 +264,97 @@
     <section class="section events" id="events" aria-labelledby="events-heading">
       <div class="container">
         <header class="section__header">
-          <span class="section__label reveal-up">What's Happening</span>
+          <span class="section__label reveal-up">What's Coming Up</span>
           <h2 class="section__title reveal-up" id="events-heading">
-            Upcoming <span class="text-accent">Events</span>
+            Upcoming <span class="text-accent">Matches & Events</span>
           </h2>
           <p class="section__description reveal-up">
-            From casual meetups to flagship conferences, there's always
-            something happening at Bloomfield BCCC.
+            From league fixtures to community gatherings, there's always something
+            happening at Bloomfield CC.
           </p>
         </header>
 
         <div class="events__grid">
           <article class="event-card reveal-up" aria-labelledby="event-1">
             <div class="event-card__date">
-              <span class="event-card__month">MAR</span>
+              <span class="event-card__month">JUN</span>
               <span class="event-card__day">15</span>
             </div>
             <div class="event-card__content">
-              <span class="event-card__tag event-card__tag--workshop">Workshop</span>
-              <h3 id="event-1" class="event-card__title">Design Systems 101</h3>
+              <span class="event-card__tag event-card__tag--workshop">Premier Division</span>
+              <h3 id="event-1" class="event-card__title">MCA Premier League Match</h3>
               <p class="event-card__text">
-                Learn how to build scalable design systems from scratch.
-                Perfect for designers and developers alike.
+                Bloomfield CC takes the field in the MCA Premier Division.
+                Come support the team as we continue our winning run.
               </p>
               <div class="event-card__meta">
                 <span class="event-card__time">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                  2:00 PM — 5:00 PM
+                  3:15 PM
                 </span>
                 <span class="event-card__location">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  Community Hall
+                  Labarriere Park, Winnipeg
                 </span>
               </div>
             </div>
-            <a href="#contact" class="event-card__link" aria-label="Register for Design Systems 101">
+            <a href="#contact" class="event-card__link" aria-label="Register for MCA Premier League Match">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
           </article>
 
           <article class="event-card reveal-up" aria-labelledby="event-2">
             <div class="event-card__date">
-              <span class="event-card__month">MAR</span>
+              <span class="event-card__month">JUN</span>
               <span class="event-card__day">22</span>
             </div>
             <div class="event-card__content">
-              <span class="event-card__tag event-card__tag--social">Social</span>
-              <h3 id="event-2" class="event-card__title">Spring Networking Mixer</h3>
+              <span class="event-card__tag event-card__tag--social">Recreational T20</span>
+              <h3 id="event-2" class="event-card__title">Bloomfield All Stars vs Taverners</h3>
               <p class="event-card__text">
-                Our quarterly mixer! Meet fellow members, share projects,
-                and enjoy an evening of good conversation.
+                Recreational T20 league action. Great cricket in a relaxed atmosphere
+                — perfect for families and new supporters.
               </p>
               <div class="event-card__meta">
                 <span class="event-card__time">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                  6:00 PM — 9:00 PM
+                  1:00 PM
                 </span>
                 <span class="event-card__location">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  Rooftop Lounge
+                  Labarriere Park, Winnipeg
                 </span>
               </div>
             </div>
-            <a href="#contact" class="event-card__link" aria-label="Register for Spring Networking Mixer">
+            <a href="#contact" class="event-card__link" aria-label="Register for All Stars match">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
           </article>
 
           <article class="event-card reveal-up" aria-labelledby="event-3">
             <div class="event-card__date">
-              <span class="event-card__month">APR</span>
-              <span class="event-card__day">05</span>
+              <span class="event-card__month">JUL</span>
+              <span class="event-card__day">06</span>
             </div>
             <div class="event-card__content">
-              <span class="event-card__tag event-card__tag--hackathon">Hackathon</span>
-              <h3 id="event-3" class="event-card__title">Bloom Hack 2025</h3>
+              <span class="event-card__tag event-card__tag--hackathon">Community</span>
+              <h3 id="event-3" class="event-card__title">Bloomfield CC Community Day</h3>
               <p class="event-card__text">
-                48 hours to build something amazing. Teams of 2-4.
-                Prizes, mentors, and all the coffee you can drink.
+                Annual community gathering with cricket, food, and fun.
+                Open to all members, families, and friends.
               </p>
               <div class="event-card__meta">
                 <span class="event-card__time">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                  Fri 6PM — Sun 6PM
+                  11:00 AM — 6:00 PM
                 </span>
                 <span class="event-card__location">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  Innovation Lab
+                  Labarriere Park, Winnipeg
                 </span>
               </div>
             </div>
-            <a href="#contact" class="event-card__link" aria-label="Register for Bloom Hack 2025">
+            <a href="#contact" class="event-card__link" aria-label="Register for Community Day">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
           </article>
@@ -359,234 +363,218 @@
     </section>
 
     <!-- ═══════════════════════════════════════════ -->
-    <!-- MEET THE TEAM                              -->
+    <!-- CRICKET SECTION — Teams & Players          -->
     <!-- ═══════════════════════════════════════════ -->
-    <section class="section team" id="team" aria-labelledby="team-heading">
+    <section class="section cricket" id="cricket" aria-labelledby="cricket-heading">
       <div class="container">
         <header class="section__header">
-          <span class="section__label reveal-up">Leadership</span>
-          <h2 class="section__title reveal-up" id="team-heading">
-            Meet the <span class="text-accent">Team</span>
+          <span class="section__label reveal-up">Our Teams</span>
+          <h2 class="section__title reveal-up" id="cricket-heading">
+            Cricket at <span class="text-accent">Bloomfield</span>
           </h2>
           <p class="section__description reveal-up">
-            The passionate people behind Bloomfield BCCC who keep the community
-            thriving and the events running.
+            Three teams competing across multiple divisions of the Manitoba Cricket Association league.
           </p>
         </header>
 
-        <div class="team__grid">
-          <article class="team__card reveal-up">
-            <div class="team__avatar" aria-hidden="true">
-              <div class="team__avatar-inner" style="--avatar-hue: 220">JM</div>
+        <!-- Team Cards -->
+        <div class="teams__grid">
+          <article class="team-info-card reveal-up">
+            <div class="team-info-card__header">
+              <h3 class="team-info-card__name">Bloomfield CC</h3>
+              <span class="team-info-card__division">MCA Premier Division</span>
             </div>
-            <h3 class="team__name">Jordan M.</h3>
-            <span class="team__role">Founder & President</span>
-            <p class="team__bio">Visionary leader who started BCCC with a mission to connect creatives across disciplines.</p>
-            <div class="team__socials">
-              <a href="#" aria-label="Jordan on LinkedIn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              </a>
-              <a href="#" aria-label="Jordan on Twitter">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
-              </a>
-            </div>
-          </article>
-
-          <article class="team__card reveal-up">
-            <div class="team__avatar" aria-hidden="true">
-              <div class="team__avatar-inner" style="--avatar-hue: 280">PR</div>
-            </div>
-            <h3 class="team__name">Priya R.</h3>
-            <span class="team__role">VP of Events</span>
-            <p class="team__bio">Event planning wizard who ensures every workshop and meetup runs flawlessly.</p>
-            <div class="team__socials">
-              <a href="#" aria-label="Priya on LinkedIn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              </a>
-              <a href="#" aria-label="Priya on Twitter">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
-              </a>
+            <p class="team-info-card__desc">
+              Our flagship team dominating the premier division with 7 consecutive wins.
+              Led by experienced senior batsmen and a formidable bowling attack.
+            </p>
+            <div class="team-info-card__stats">
+              <div class="team-info-card__stat">
+                <span class="team-info-card__stat-value">7</span>
+                <span class="team-info-card__stat-label">Wins</span>
+              </div>
+              <div class="team-info-card__stat">
+                <span class="team-info-card__stat-value">1st</span>
+                <span class="team-info-card__stat-label">Table Position</span>
+              </div>
             </div>
           </article>
 
-          <article class="team__card reveal-up">
-            <div class="team__avatar" aria-hidden="true">
-              <div class="team__avatar-inner" style="--avatar-hue: 160">DT</div>
+          <article class="team-info-card reveal-up">
+            <div class="team-info-card__header">
+              <h3 class="team-info-card__name">Bloomfield Knights</h3>
+              <span class="team-info-card__division">MCA Division 2</span>
             </div>
-            <h3 class="team__name">David T.</h3>
-            <span class="team__role">Tech Lead</span>
-            <p class="team__bio">Full-stack developer who heads our hackathons and mentors aspiring engineers.</p>
-            <div class="team__socials">
-              <a href="#" aria-label="David on LinkedIn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              </a>
-              <a href="#" aria-label="David on GitHub">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
+            <p class="team-info-card__desc">
+              Competitive Division 2 side developing emerging talent. Strong performances
+              from dedicated players fighting hard every match.
+            </p>
+            <div class="team-info-card__stats">
+              <div class="team-info-card__stat">
+                <span class="team-info-card__stat-value">Div 2</span>
+                <span class="team-info-card__stat-label">League</span>
+              </div>
+              <div class="team-info-card__stat">
+                <span class="team-info-card__stat-value">T20</span>
+                <span class="team-info-card__stat-label">Format</span>
+              </div>
             </div>
           </article>
 
-          <article class="team__card reveal-up">
-            <div class="team__avatar" aria-hidden="true">
-              <div class="team__avatar-inner" style="--avatar-hue: 30">SK</div>
+          <article class="team-info-card reveal-up">
+            <div class="team-info-card__header">
+              <h3 class="team-info-card__name">Bloomfield All Stars</h3>
+              <span class="team-info-card__division">MCA Recreational T20</span>
             </div>
-            <h3 class="team__name">Sofia K.</h3>
-            <span class="team__role">Community Manager</span>
-            <p class="team__bio">People person who makes every new member feel at home from day one.</p>
-            <div class="team__socials">
-              <a href="#" aria-label="Sofia on LinkedIn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              </a>
-              <a href="#" aria-label="Sofia on Instagram">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-              </a>
+            <p class="team-info-card__desc">
+              Recreational T20 team providing a welcoming entry point for new players.
+              Competitive spirit with community-first values.
+            </p>
+            <div class="team-info-card__stats">
+              <div class="team-info-card__stat">
+                <span class="team-info-card__stat-value">Rec</span>
+                <span class="team-info-card__stat-label">League</span>
+              </div>
+              <div class="team-info-card__stat">
+                <span class="team-info-card__stat-value">T20</span>
+                <span class="team-info-card__stat-label">Format</span>
+              </div>
             </div>
           </article>
+        </div>
+
+        <!-- Player Highlights -->
+        <div class="players-section">
+          <h3 class="players-section__title reveal-up">2024 Award Winners</h3>
+          <div class="players__grid">
+            <article class="player-card reveal-up">
+              <div class="player-card__image">
+                <img src="assets/images/award-mvp.jpg" alt="Hirusha Weerasekara — MVP of the Year" loading="lazy">
+              </div>
+              <div class="player-card__info">
+                <h4 class="player-card__name">Hirusha Weerasekara</h4>
+                <span class="player-card__award">MVP of the Year — Premier Division</span>
+              </div>
+            </article>
+
+            <article class="player-card reveal-up">
+              <div class="player-card__image">
+                <img src="assets/images/award-emerging.jpg" alt="Sanka Silva — Emerging Player" loading="lazy">
+              </div>
+              <div class="player-card__info">
+                <h4 class="player-card__name">Sanka Silva</h4>
+                <span class="player-card__award">Emerging Player of the Year</span>
+              </div>
+            </article>
+
+            <article class="player-card reveal-up">
+              <div class="player-card__image">
+                <img src="assets/images/award-batsman.jpg" alt="Ishara Lekamge — Best Batsman" loading="lazy">
+              </div>
+              <div class="player-card__info">
+                <h4 class="player-card__name">Ishara Lekamge</h4>
+                <span class="player-card__award">Best Batsman — Division 2</span>
+              </div>
+            </article>
+
+            <article class="player-card reveal-up">
+              <div class="player-card__image">
+                <img src="assets/images/award-bowler.jpg" alt="Anil Dasanayake — Best Bowler" loading="lazy">
+              </div>
+              <div class="player-card__info">
+                <h4 class="player-card__name">Anil Dasanayake</h4>
+                <span class="player-card__award">Best Bowler — Recreational League</span>
+              </div>
+            </article>
+
+            <article class="player-card reveal-up">
+              <div class="player-card__image">
+                <img src="assets/images/award-mvp-div2.jpg" alt="Shehan Senarath — MVP Division 2" loading="lazy">
+              </div>
+              <div class="player-card__info">
+                <h4 class="player-card__name">Shehan Senarath</h4>
+                <span class="player-card__award">MVP of the Year — Division 2</span>
+              </div>
+            </article>
+
+            <article class="player-card reveal-up">
+              <div class="player-card__image">
+                <img src="assets/images/award-batsman-allstars.jpg" alt="Sachithananthan Ruban — Best Batsman All Stars" loading="lazy">
+              </div>
+              <div class="player-card__info">
+                <h4 class="player-card__name">Sachithananthan Ruban</h4>
+                <span class="player-card__award">Best Batsman — Recreational League</span>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════ -->
-    <!-- COMMUNITY / TESTIMONIALS                   -->
-    <!-- ═══════════════════════════════════════════ -->
-    <section class="section community" id="community" aria-labelledby="community-heading">
-      <div class="container">
-        <header class="section__header">
-          <span class="section__label reveal-up">Our People</span>
-          <h2 class="section__title reveal-up" id="community-heading">
-            Hear From the <span class="text-accent">Community</span>
-          </h2>
-          <p class="section__description reveal-up">
-            Real stories from real members. Here's what being part of
-            Bloomfield BCCC means to the people who make it special.
-          </p>
-        </header>
-
-        <div class="testimonials__grid">
-          <blockquote class="testimonial reveal-up">
-            <div class="testimonial__stars" aria-label="5 out of 5 stars">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </div>
-            <p class="testimonial__text">
-              "Joining Bloomfield BCCC was the best decision I made this year.
-              The workshops are incredible, and the people are genuinely supportive.
-              I've learned more here in 3 months than in a year on my own."
-            </p>
-            <footer class="testimonial__author">
-              <div class="testimonial__avatar" aria-hidden="true">AK</div>
-              <div>
-                <cite class="testimonial__name">Aisha K.</cite>
-                <span class="testimonial__role">UX Designer &middot; Member since 2024</span>
-              </div>
-            </footer>
-          </blockquote>
-
-          <blockquote class="testimonial reveal-up">
-            <div class="testimonial__stars" aria-label="5 out of 5 stars">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </div>
-            <p class="testimonial__text">
-              "The hackathon changed everything for me. I met my co-founder here,
-              and now we're building a startup together. BCCC doesn't just
-              talk about community — they live it."
-            </p>
-            <footer class="testimonial__author">
-              <div class="testimonial__avatar" aria-hidden="true">MR</div>
-              <div>
-                <cite class="testimonial__name">Marcus R.</cite>
-                <span class="testimonial__role">Full-Stack Dev &middot; Member since 2024</span>
-              </div>
-            </footer>
-          </blockquote>
-
-          <blockquote class="testimonial reveal-up">
-            <div class="testimonial__stars" aria-label="5 out of 5 stars">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </div>
-            <p class="testimonial__text">
-              "As someone who just moved to the area, Bloomfield gave me an instant
-              network of amazing people. The events are well-organized, the
-              atmosphere is welcoming, and I always leave inspired."
-            </p>
-            <footer class="testimonial__author">
-              <div class="testimonial__avatar" aria-hidden="true">SL</div>
-              <div>
-                <cite class="testimonial__name">Sarah L.</cite>
-                <span class="testimonial__role">Product Manager &middot; Member since 2025</span>
-              </div>
-            </footer>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- GALLERY SECTION (CSS Gradient Art)         -->
+    <!-- GALLERY SECTION                            -->
     <!-- ═══════════════════════════════════════════ -->
     <section class="section gallery" id="gallery" aria-labelledby="gallery-heading">
       <div class="container">
         <header class="section__header">
           <span class="section__label reveal-up">Moments</span>
           <h2 class="section__title reveal-up" id="gallery-heading">
-            Life at <span class="text-accent">Bloomfield</span>
+            Life at <span class="text-accent">Bloomfield CC</span>
           </h2>
           <p class="section__description reveal-up">
-            A snapshot of the energy, creativity, and connections that
-            define our community.
+            From the pitch to the pavilion — the energy, passion, and camaraderie
+            that define our cricket community.
           </p>
         </header>
 
         <div class="gallery__grid">
           <div class="gallery__item gallery__item--wide reveal-up">
-            <div class="gallery__art gallery__art--1" aria-label="Community meetup atmosphere">
-              <div class="gallery__art-overlay">
-                <span class="gallery__art-label">Community Meetup</span>
-                <span class="gallery__art-sublabel">Monthly gathering &middot; 80+ attendees</span>
-              </div>
+            <img class="gallery__img" src="assets/images/team-squad-2024.jpg" alt="Bloomfield CC 2024 Squad" loading="lazy">
+            <div class="gallery__art-overlay">
+              <span class="gallery__art-label">2024 Squad</span>
+              <span class="gallery__art-sublabel">Ready to conquer the field</span>
             </div>
           </div>
           <div class="gallery__item reveal-up">
-            <div class="gallery__art gallery__art--2" aria-label="Workshop session">
-              <div class="gallery__art-overlay">
-                <span class="gallery__art-label">Workshop Session</span>
-                <span class="gallery__art-sublabel">Hands-on learning</span>
-              </div>
+            <img class="gallery__img" src="assets/images/match-win-1.jpg" alt="4th consecutive win celebration" loading="lazy">
+            <div class="gallery__art-overlay">
+              <span class="gallery__art-label">Victory</span>
+              <span class="gallery__art-sublabel">4th consecutive win</span>
             </div>
           </div>
           <div class="gallery__item reveal-up">
-            <div class="gallery__art gallery__art--3" aria-label="Hackathon teams">
-              <div class="gallery__art-overlay">
-                <span class="gallery__art-label">Hackathon Teams</span>
-                <span class="gallery__art-sublabel">48hrs of innovation</span>
-              </div>
+            <img class="gallery__img" src="assets/images/century-celebration.jpg" alt="Chinthaka's T20 century" loading="lazy">
+            <div class="gallery__art-overlay">
+              <span class="gallery__art-label">T20 Century</span>
+              <span class="gallery__art-sublabel">Chinthaka Wijayasinghe</span>
             </div>
           </div>
           <div class="gallery__item reveal-up">
-            <div class="gallery__art gallery__art--4" aria-label="Networking night">
-              <div class="gallery__art-overlay">
-                <span class="gallery__art-label">Networking Night</span>
-                <span class="gallery__art-sublabel">Quarterly mixer</span>
-              </div>
+            <img class="gallery__img" src="assets/images/player-performance.jpg" alt="Stellar all-round performance" loading="lazy">
+            <div class="gallery__art-overlay">
+              <span class="gallery__art-label">Star Performance</span>
+              <span class="gallery__art-sublabel">Hirusha Weerasekara</span>
+            </div>
+          </div>
+          <div class="gallery__item reveal-up">
+            <img class="gallery__img" src="assets/images/match-action-1.jpg" alt="Match in action" loading="lazy">
+            <div class="gallery__art-overlay">
+              <span class="gallery__art-label">Match Action</span>
+              <span class="gallery__art-sublabel">Recreational T20 League</span>
+            </div>
+          </div>
+          <div class="gallery__item reveal-up">
+            <img class="gallery__img" src="assets/images/match-practice.jpg" alt="Practice match against Winnipeg Wolves" loading="lazy">
+            <div class="gallery__art-overlay">
+              <span class="gallery__art-label">Practice Game</span>
+              <span class="gallery__art-sublabel">vs Winnipeg Wolves</span>
             </div>
           </div>
           <div class="gallery__item gallery__item--wide reveal-up">
-            <div class="gallery__art gallery__art--5" aria-label="Annual summit">
-              <div class="gallery__art-overlay">
-                <span class="gallery__art-label">Annual Summit</span>
-                <span class="gallery__art-sublabel">Our flagship event &middot; 200+ people</span>
-              </div>
+            <img class="gallery__img" src="assets/images/community-1.jpg" alt="Bloomfield CC community event" loading="lazy">
+            <div class="gallery__art-overlay">
+              <span class="gallery__art-label">Community</span>
+              <span class="gallery__art-sublabel">More than just cricket</span>
             </div>
           </div>
         </div>
@@ -608,74 +596,72 @@
         <div class="faq__list" role="list">
           <details class="faq__item reveal-up" role="listitem">
             <summary class="faq__question">
-              What is Bloomfield BCCC and who is it for?
+              What is Bloomfield Cricket Club?
               <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq__answer">
               <p>
-                Bloomfield BCCC is an open community for anyone who wants to learn,
-                create, and connect. Whether you're a student, professional,
-                hobbyist, or just curious — you belong here. We welcome all
-                skill levels, backgrounds, and disciplines.
+                Bloomfield CC is a cricket club based in Winnipeg, Manitoba, competing
+                in the Manitoba Cricket Association leagues. We have three teams:
+                Bloomfield CC (Premier Division), Bloomfield Knights (Division 2),
+                and Bloomfield All Stars (Recreational T20).
               </p>
             </div>
           </details>
 
           <details class="faq__item reveal-up" role="listitem">
             <summary class="faq__question">
-              How much does membership cost?
+              How do I join the club?
               <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq__answer">
               <p>
-                Our core membership is completely free. Some premium events and
-                workshops may have a small fee to cover materials and venue costs,
-                but the majority of our programming is open to all at no charge.
+                Fill out the registration form below or come to one of our practice
+                sessions. We welcome players of all skill levels — from beginners
+                to experienced cricketers. Our recreational team is a great entry
+                point for newcomers.
               </p>
             </div>
           </details>
 
           <details class="faq__item reveal-up" role="listitem">
             <summary class="faq__question">
-              How often do you host events?
+              Where do you play matches?
               <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq__answer">
               <p>
-                We host events weekly — typically 2-3 per week ranging from
-                casual coffee chats to structured workshops and monthly
-                flagship events. Check our events section or join our
-                mailing list to stay updated.
+                Our home ground is Labarriere Park in Winnipeg. MCA league matches
+                are played across various grounds in the Winnipeg area. Practice
+                sessions are held regularly — check with us for the latest schedule.
               </p>
             </div>
           </details>
 
           <details class="faq__item reveal-up" role="listitem">
             <summary class="faq__question">
-              Can I host my own event or workshop?
+              Do you offer softball and hardball cricket?
               <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq__answer">
               <p>
-                Absolutely! We actively encourage members to lead sessions
-                on topics they're passionate about. Reach out through our
-                contact form or speak with any organizer at an event. We'll
-                help you plan, promote, and run your session.
+                Yes. Our Premier Division and Division 2 teams play hardball cricket,
+                while the Recreational T20 league uses a softball format — perfect
+                for players who are newer to the game or prefer a lighter format.
               </p>
             </div>
           </details>
 
           <details class="faq__item reveal-up" role="listitem">
             <summary class="faq__question">
-              I'm new to the area. Will I fit in?
+              How much does it cost to play?
               <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
             <div class="faq__answer">
               <p>
-                100%. Many of our most active members started exactly where you
-                are. We have dedicated "welcome events" for newcomers, and our
-                community culture prioritizes inclusivity. You'll feel at home
-                from day one.
+                Membership fees cover MCA registration and league costs. We keep fees
+                affordable and accessible. Contact us for the current season's rates.
+                Equipment can be provided for newcomers trying out the sport.
               </p>
             </div>
           </details>
@@ -690,13 +676,14 @@
       <div class="cta-banner__bg" aria-hidden="true"></div>
       <div class="container cta-banner__content">
         <h2 class="cta-banner__title reveal-up" id="cta-heading">
-          Ready to Be Part of<br>Something <span class="hero__title-accent">Bigger</span>?
+          Ready to Step Onto<br>the <span class="hero__title-accent">Pitch</span>?
         </h2>
         <p class="cta-banner__text reveal-up">
-          Join 250+ members who are already learning, building, and growing with Bloomfield BCCC.
+          Whether you're a seasoned cricketer or picking up a bat for the first time,
+          Bloomfield CC has a place for you.
         </p>
         <a href="#contact" class="btn btn--primary btn--lg reveal-up">
-          Get Started Today
+          Join Bloomfield CC
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
           </svg>
@@ -712,14 +699,15 @@
         <header class="section__header">
           <span class="section__label reveal-up">Get Involved</span>
           <h2 class="section__title reveal-up" id="contact-heading">
-            Ready to <span class="text-accent">Join</span>?
+            Ready to <span class="text-accent">Play</span>?
           </h2>
           <p class="section__description reveal-up">
-            Fill out the form below and we'll get you set up. Welcome to Bloomfield BCCC.
+            Fill out the form below to register your interest. We'll get back to you
+            with practice schedules and next steps.
           </p>
         </header>
 
-        <form class="contact-form reveal-up" id="contact-form" aria-label="Membership registration form" novalidate>
+        <form class="contact-form reveal-up" id="contact-form" aria-label="Player registration form" novalidate>
           <div class="contact-form__row">
             <div class="contact-form__group">
               <label for="form-name" class="contact-form__label">Full Name</label>
@@ -734,32 +722,31 @@
           </div>
 
           <div class="contact-form__group">
-            <label for="form-interest" class="contact-form__label">What interests you most?</label>
+            <label for="form-interest" class="contact-form__label">Which team interests you?</label>
             <select id="form-interest" name="interest" class="contact-form__select" required>
-              <option value="" disabled selected>Choose an area...</option>
-              <option value="workshops">Workshops &amp; Learning</option>
-              <option value="networking">Networking &amp; Socials</option>
-              <option value="hackathons">Hackathons &amp; Projects</option>
-              <option value="mentorship">Mentorship</option>
-              <option value="all">A bit of everything!</option>
+              <option value="" disabled selected>Choose a team...</option>
+              <option value="premier">Bloomfield CC — Premier Division</option>
+              <option value="knights">Bloomfield Knights — Division 2</option>
+              <option value="allstars">Bloomfield All Stars — Recreational T20</option>
+              <option value="unsure">Not sure yet — tell me more</option>
             </select>
             <span class="contact-form__error" aria-live="polite"></span>
           </div>
 
           <div class="contact-form__group">
-            <label for="form-message" class="contact-form__label">Anything else? <span class="contact-form__optional">(Optional)</span></label>
-            <textarea id="form-message" name="message" class="contact-form__textarea" placeholder="Tell us about yourself, what you're looking for, or any questions you have..." rows="4"></textarea>
+            <label for="form-message" class="contact-form__label">Tell us about your cricket experience <span class="contact-form__optional">(Optional)</span></label>
+            <textarea id="form-message" name="message" class="contact-form__textarea" placeholder="Playing experience, preferred position (batsman, bowler, all-rounder), any questions..." rows="4"></textarea>
           </div>
 
           <button type="submit" class="btn btn--primary btn--lg btn--full" id="form-submit">
-            <span class="btn__text">Join Bloomfield BCCC</span>
+            <span class="btn__text">Register Interest</span>
             <span class="btn__loader" aria-hidden="true"></span>
             <svg class="btn__check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
           </button>
 
           <div class="contact-form__success" id="form-success" role="alert" aria-live="polite" hidden>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <p><strong>Welcome aboard!</strong> Check your inbox for next steps.</p>
+            <p><strong>Welcome to Bloomfield CC!</strong> We'll be in touch with practice schedules soon.</p>
           </div>
         </form>
       </div>
@@ -773,28 +760,25 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a href="#hero" class="nav__logo" aria-label="Bloomfield BCCC — Back to top">
+          <a href="#hero" class="nav__logo" aria-label="Bloomfield Cricket Club — Back to top">
             <svg class="nav__logo-icon" width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
               <circle cx="18" cy="18" r="16" stroke="currentColor" stroke-width="2"/>
-              <path d="M18 6C18 6 24 12 24 18C24 24 18 30 18 30C18 30 12 24 12 18C12 12 18 6 18 6Z" fill="currentColor" opacity="0.3"/>
-              <path d="M6 18C6 18 12 12 18 12C24 12 30 18 30 18C30 18 24 24 18 24C12 24 6 18 6 18Z" fill="currentColor" opacity="0.3"/>
+              <path d="M12 8 Q18 18 12 28" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
+              <path d="M24 8 Q18 18 24 28" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
               <circle cx="18" cy="18" r="4" fill="currentColor"/>
             </svg>
-            <span class="nav__logo-text">Bloomfield <span class="nav__logo-accent">BCCC</span></span>
+            <span class="nav__logo-text">Bloomfield <span class="nav__logo-accent">CC</span></span>
           </a>
-          <p class="footer__tagline">Where ideas bloom into reality.</p>
+          <p class="footer__tagline">Manitoba's home for cricket. Est. 2024.</p>
           <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
             <a href="#" class="footer__social-link" aria-label="Instagram">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
-            <a href="#" class="footer__social-link" aria-label="Twitter / X">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
-            </a>
-            <a href="#" class="footer__social-link" aria-label="LinkedIn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-            <a href="#" class="footer__social-link" aria-label="GitHub">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <a href="mailto:bloomfieldcc@example.com" class="footer__social-link" aria-label="Email">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </a>
           </div>
         </div>
@@ -803,9 +787,9 @@
           <h3 class="footer__heading">Quick Links</h3>
           <ul role="list">
             <li><a href="#about">About Us</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#team">Our Team</a></li>
-            <li><a href="#community">Community</a></li>
+            <li><a href="#events">Matches & Events</a></li>
+            <li><a href="#cricket">Our Teams</a></li>
+            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
@@ -813,16 +797,16 @@
         <div class="footer__links">
           <h3 class="footer__heading">Connect</h3>
           <ul role="list">
-            <li><a href="#contact">Join Us</a></li>
-            <li><a href="mailto:hello@bloomfield-bccc.com">Email Us</a></li>
-            <li><a href="#">Discord Server</a></li>
-            <li><a href="#">Newsletter</a></li>
+            <li><a href="#contact">Join the Club</a></li>
+            <li><a href="mailto:bloomfieldcc@example.com">Email Us</a></li>
+            <li><a href="#">Facebook Page</a></li>
+            <li><a href="#">MCA Website</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer__bottom">
-        <p>&copy; <span id="footer-year"></span> Bloomfield BCCC. Built with passion.</p>
+        <p>&copy; <span id="footer-year"></span> Bloomfield Cricket Club. Winnipeg, Manitoba.</p>
       </div>
     </div>
   </footer>

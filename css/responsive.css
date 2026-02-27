@@ -10,14 +10,14 @@
     margin-inline: auto;
   }
 
-  .team__grid {
-    grid-template-columns: repeat(2, 1fr);
+  .teams__grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-inline: auto;
   }
 
-  .testimonials__grid {
-    grid-template-columns: 1fr;
-    max-width: 520px;
-    margin-inline: auto;
+  .players__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .gallery__grid {
@@ -105,8 +105,14 @@
     align-self: flex-start;
   }
 
-  /* Team 2 col on tablet, 1 col on mobile */
-  .team__grid {
+  /* Teams single column on mobile */
+  .teams__grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-inline: auto;
+  }
+
+  .players__grid {
     grid-template-columns: 1fr;
     max-width: 360px;
     margin-inline: auto;
@@ -192,12 +198,12 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .testimonials__grid {
+  .teams__grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .team__grid {
-    grid-template-columns: repeat(4, 1fr);
+  .players__grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -214,8 +220,8 @@
 @media (hover: none) {
   .about__card:hover,
   .event-card:hover,
-  .testimonial:hover,
-  .team__card:hover {
+  .team-info-card:hover,
+  .player-card:hover {
     transform: none;
     box-shadow: var(--card-shadow);
   }
@@ -236,10 +242,6 @@
   :root {
     --border-color: var(--gray-700);
     --card-border: var(--gray-600);
-  }
-
-  .hero__grid-overlay {
-    display: none;
   }
 }
 
