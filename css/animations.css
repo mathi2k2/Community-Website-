@@ -49,11 +49,11 @@
 @keyframes border-glow {
   0%, 100% {
     border-color: var(--color-primary-500);
-    box-shadow: 0 0 8px rgba(45, 157, 84, 0.15);
+    box-shadow: 0 0 8px rgba(43, 138, 214, 0.15);
   }
   50% {
     border-color: var(--color-primary-400);
-    box-shadow: 0 0 16px rgba(45, 157, 84, 0.25);
+    box-shadow: 0 0 16px rgba(43, 138, 214, 0.25);
   }
 }
 

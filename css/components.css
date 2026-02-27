@@ -46,8 +46,14 @@
   transition: transform var(--duration-normal) var(--ease-spring);
 }
 
-.nav__logo:hover .nav__logo-icon {
-  transform: rotate(45deg) scale(1.1);
+.nav__logo-img {
+  border-radius: var(--radius-full);
+  transition: transform var(--duration-normal) var(--ease-spring);
+}
+
+.nav__logo:hover .nav__logo-icon,
+.nav__logo:hover .nav__logo-img {
+  transform: scale(1.1);
 }
 
 /* Nav Links */
@@ -249,7 +255,7 @@
   height: 2.5rem;
   border-radius: var(--radius-full);
   color: var(--color-primary-500);
-  background: rgba(45, 157, 84, 0.08);
+  background: rgba(43, 138, 214, 0.08);
   align-self: center;
   transition: background-color var(--duration-fast),
               transform var(--duration-fast) var(--ease-spring);
@@ -428,7 +434,7 @@
 .contact-form__textarea:focus {
   outline: none;
   border-color: var(--color-primary-500);
-  box-shadow: 0 0 0 3px rgba(45, 157, 84, 0.15);
+  box-shadow: 0 0 0 3px rgba(43, 138, 214, 0.15);
 }
 
 .contact-form__input.error,

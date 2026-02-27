@@ -42,10 +42,10 @@
   margin-bottom: var(--space-sm);
   padding: var(--space-2xs) var(--space-sm);
   background: linear-gradient(135deg,
-    rgba(45, 157, 84, 0.1),
-    rgba(45, 157, 84, 0.05));
+    rgba(43, 138, 214, 0.1),
+    rgba(43, 138, 214, 0.05));
   border-radius: var(--radius-full);
-  border: 1px solid rgba(45, 157, 84, 0.15);
+  border: 1px solid rgba(43, 138, 214, 0.15);
 }
 
 .section__title {
