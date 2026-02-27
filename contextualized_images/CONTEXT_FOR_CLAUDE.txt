@@ -1,0 +1,34 @@
+Bloomfield CC Facebook Image Context Package
+=====================================
+
+Goal:
+- Prioritize cricket-first storytelling for the website.
+- Keep social/community images available, but secondary.
+
+How images were sorted:
+- Primary signal: caption sidecar files (*.jpg.caption.txt).
+- Fallback signal: OCR text extracted from images where caption was empty/missing.
+- Manual visual override: low-signal images were reviewed in contact sheets and reassigned.
+- Classification was done with cricket/social/community keyword patterns plus manual corrections.
+
+Folder priority for website building:
+1) 01_cricket_matches_and_action (highest priority)
+2) 02_cricket_player_profiles_and_awards
+3) 03_cricket_team_and_tournament_announcements
+4) 05_community_events_mixed (optional supporting content)
+5) 04_social_entertainment_low_priority (use sparingly)
+6) 06_unclear_needs_manual_review (check before publishing)
+
+Counts by folder:
+- 01_cricket_matches_and_action: 139 images
+- 02_cricket_player_profiles_and_awards: 108 images
+- 03_cricket_team_and_tournament_announcements: 19 images
+- 04_social_entertainment_low_priority: 62 images
+- 05_community_events_mixed: 8 images
+- 06_unclear_needs_manual_review: 0 images
+
+Notes for Claude:
+- Treat cricket match/action and player-performance content as hero sections.
+- Use social/party content as small gallery or community sidebar only.
+- Cross-check manual review folder before final publishing decisions.
+- Refer to image_context_mapping.csv for per-file rationale and extracted text hints.
