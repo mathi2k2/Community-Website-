@@ -950,3 +950,78 @@
   color: var(--color-primary-500);
   font-weight: var(--fw-semibold);
 }
+
+
+/* ═══════════ MATCHES TABLE ═══════════ */
+
+.table-responsive {
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: var(--card-bg);
+}
+
+.matches-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+}
+
+.matches-table th {
+  text-align: left;
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-tertiary);
+  border-bottom: 2px solid var(--border-color);
+  background: var(--bg-tertiary);
+}
+
+.matches-table td {
+  padding: var(--space-xs) var(--space-sm);
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+}
+
+.matches-table tr:hover {
+  background: rgba(43, 138, 214, 0.04);
+}
+
+.matches-table .score {
+  font-weight: var(--fw-bold);
+  font-family: var(--ff-mono);
+  color: var(--text-primary);
+}
+
+.result-badge {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-tertiary);
+}
+
+.result-badge.result--won {
+  background: rgba(64, 192, 87, 0.15);
+  color: #40c057;
+}
+
+.result-badge.result--lost {
+  background: rgba(250, 82, 82, 0.15);
+  color: #fa5252;
+}
+
+.empty-state-front {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  color: var(--text-tertiary);
+  font-size: var(--fs-sm);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-lg);
+}

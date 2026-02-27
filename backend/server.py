@@ -143,6 +143,23 @@ def init_db():
             match_type TEXT NOT NULL DEFAULT 'league'
         );
 
+        CREATE TABLE IF NOT EXISTS match_performances (
+            id TEXT PRIMARY KEY,
+            match_id TEXT NOT NULL,
+            player_name TEXT NOT NULL,
+            team TEXT NOT NULL DEFAULT 'bloomfield',
+            batting_runs INTEGER NOT NULL DEFAULT 0,
+            batting_balls INTEGER NOT NULL DEFAULT 0,
+            batting_fours INTEGER NOT NULL DEFAULT 0,
+            batting_sixes INTEGER NOT NULL DEFAULT 0,
+            batting_how_out TEXT NOT NULL DEFAULT '',
+            bowling_overs TEXT NOT NULL DEFAULT '',
+            bowling_maidens INTEGER NOT NULL DEFAULT 0,
+            bowling_runs INTEGER NOT NULL DEFAULT 0,
+            bowling_wickets INTEGER NOT NULL DEFAULT 0,
+            FOREIGN KEY (match_id) REFERENCES matches(id)
+        );
+
         CREATE TABLE IF NOT EXISTS tickets (
             id TEXT PRIMARY KEY,
             event_id TEXT NOT NULL,
@@ -539,6 +556,24 @@ def public_marketplace(h):
     json_response(h, rows)
 
 
+# ─── Stripe helpers ───────────────────────────────────────────────
+
+def _get_stripe():
+    """Lazy-load stripe module. Returns None if not installed."""
+    try:
+        import stripe
+        db = get_db()
+        ps = db.execute("SELECT stripe_secret_key FROM payment_settings WHERE id = 1").fetchone()
+        db.close()
+        key = (ps["stripe_secret_key"] if ps else "") or os.getenv("STRIPE_SECRET_KEY", "")
+        if not key:
+            return None
+        stripe.api_key = key
+        return stripe
+    except ImportError:
+        return None
+
+
 # ─── Ticket purchase ─────────────────────────────────────────────
 
 @route("POST", "/api/public/tickets")
@@ -549,6 +584,7 @@ def public_buy_ticket(h):
     buyer_email = (body.get("buyer_email") or "").strip().lower()
     quantity = int(body.get("quantity", 1))
     method = body.get("payment_method", "etransfer")
+    unit_price = float(body.get("unit_price", 0))  # cents for Stripe
 
     if not event_id or not buyer_name or not buyer_email:
         return error_response(h, "event_id, buyer_name, buyer_email required")
@@ -561,11 +597,48 @@ def public_buy_ticket(h):
 
     tid = str(uuid.uuid4())
     now = datetime.now(timezone.utc).isoformat()
-    status = "pending_transfer" if method == "etransfer" else "pending_checkout"
+    stripe_session_id = None
+    checkout_url = None
+
+    if method == "card":
+        stripe_mod = _get_stripe()
+        if stripe_mod is None:
+            db.close()
+            return error_response(h, "Card payments not configured. Use e-transfer or PayPal.", 400)
+
+        # Create Stripe Checkout session
+        success_url = body.get("success_url", "http://localhost:8000/?ticket_status=success")
+        cancel_url = body.get("cancel_url", "http://localhost:8000/?ticket_status=cancel")
+        price_cents = int(unit_price * 100) if unit_price else 2000  # default $20
+
+        session = stripe_mod.checkout.Session.create(
+            payment_method_types=["card"],
+            line_items=[{
+                "price_data": {
+                    "currency": "cad",
+                    "product_data": {"name": f"Ticket: {event['title']}"},
+                    "unit_amount": price_cents,
+                },
+                "quantity": quantity,
+            }],
+            mode="payment",
+            success_url=success_url,
+            cancel_url=cancel_url,
+            client_reference_id=tid,
+            customer_email=buyer_email,
+            metadata={"ticket_id": tid, "event_id": event_id},
+        )
+        stripe_session_id = session.id
+        checkout_url = session.url
+        status = "pending_checkout"
+    elif method == "etransfer":
+        status = "pending_transfer"
+    else:
+        status = "pending_checkout"
 
     db.execute(
-        "INSERT INTO tickets (id, event_id, buyer_name, buyer_email, quantity, payment_method, status, created_at) VALUES (?,?,?,?,?,?,?,?)",
-        (tid, event_id, buyer_name, buyer_email, quantity, method, status, now),
+        "INSERT INTO tickets (id, event_id, buyer_name, buyer_email, quantity, payment_method, status, stripe_session_id, created_at) VALUES (?,?,?,?,?,?,?,?,?)",
+        (tid, event_id, buyer_name, buyer_email, quantity, method, status, stripe_session_id, now),
     )
 
     if method == "etransfer":
@@ -580,7 +653,58 @@ def public_buy_ticket(h):
 
     db.commit()
     db.close()
-    json_response(h, {"ticket_id": tid, "status": status}, 201)
+
+    result = {"ticket_id": tid, "status": status}
+    if checkout_url:
+        result["checkout_url"] = checkout_url
+    json_response(h, result, 201)
+
+
+# ─── Stripe Webhook ──────────────────────────────────────────────
+
+@route("POST", "/api/public/stripe/webhook")
+def stripe_webhook(h):
+    """Handle Stripe checkout.session.completed events."""
+    stripe_mod = _get_stripe()
+    if stripe_mod is None:
+        return error_response(h, "Stripe not configured", 400)
+
+    payload = h.rfile.read(int(h.headers.get("Content-Length", 0)))
+    sig_header = h.headers.get("Stripe-Signature", "")
+    webhook_secret = os.getenv("STRIPE_WEBHOOK_SECRET", "")
+
+    try:
+        if webhook_secret:
+            event = stripe_mod.Webhook.construct_event(payload, sig_header, webhook_secret)
+        else:
+            event = json.loads(payload)
+    except Exception as exc:
+        return error_response(h, f"Webhook error: {exc}", 400)
+
+    if event.get("type") == "checkout.session.completed":
+        session = event["data"]["object"]
+        tid = session.get("client_reference_id") or (session.get("metadata") or {}).get("ticket_id")
+        if tid:
+            db = get_db()
+            db.execute("UPDATE tickets SET status = 'paid', stripe_session_id = ? WHERE id = ?",
+                       (session.get("id", ""), tid))
+            # Create notification for handler
+            ticket = db.execute("SELECT * FROM tickets WHERE id = ?", (tid,)).fetchone()
+            if ticket:
+                ps = db.execute("SELECT ticket_handler_email FROM payment_settings WHERE id = 1").fetchone()
+                handler_email = ps["ticket_handler_email"] if ps else ""
+                if handler_email:
+                    now = datetime.now(timezone.utc).isoformat()
+                    db.execute(
+                        "INSERT INTO notifications (id, recipient_email, subject, body, created_at) VALUES (?,?,?,?,?)",
+                        (str(uuid.uuid4()), handler_email,
+                         f"Card payment received for ticket {tid}",
+                         f"Ticket from {ticket['buyer_name']} ({ticket['buyer_email']}) paid via Stripe.", now),
+                    )
+            db.commit()
+            db.close()
+
+    json_response(h, {"received": True})
 
 
 # ─── Member ticket routes ────────────────────────────────────────
@@ -935,6 +1059,64 @@ def admin_create_match(h):
     row = row_to_dict(db.execute("SELECT * FROM matches WHERE id = ?", (mid,)).fetchone())
     db.close()
     json_response(h, row, 201)
+
+
+# ─── Admin: Scorecards ────────────────────────────────────────────
+
+@route("POST", "/api/admin/matches/:id/scorecard", auth="admin")
+def admin_add_scorecard(h):
+    """Add or replace batting/bowling performances for a match."""
+    body = read_json_body(h)
+    match_id = h._params["id"]
+    performances = body.get("performances", [])
+
+    db = get_db()
+    match = db.execute("SELECT * FROM matches WHERE id = ?", (match_id,)).fetchone()
+    if match is None:
+        db.close()
+        return error_response(h, "Match not found", 404)
+
+    # Clear existing scorecard
+    db.execute("DELETE FROM match_performances WHERE match_id = ?", (match_id,))
+
+    for perf in performances:
+        pid = str(uuid.uuid4())
+        db.execute(
+            """INSERT INTO match_performances
+               (id, match_id, player_name, team, batting_runs, batting_balls,
+                batting_fours, batting_sixes, batting_how_out,
+                bowling_overs, bowling_maidens, bowling_runs, bowling_wickets)
+               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+            (pid, match_id, perf.get("player_name", ""), perf.get("team", "bloomfield"),
+             int(perf.get("batting_runs", 0)), int(perf.get("batting_balls", 0)),
+             int(perf.get("batting_fours", 0)), int(perf.get("batting_sixes", 0)),
+             perf.get("batting_how_out", ""),
+             perf.get("bowling_overs", ""), int(perf.get("bowling_maidens", 0)),
+             int(perf.get("bowling_runs", 0)), int(perf.get("bowling_wickets", 0))),
+        )
+
+    # Update match scores if provided
+    if body.get("bloomfield_score"):
+        db.execute("UPDATE matches SET bloomfield_score=?, opponent_score=?, result=? WHERE id=?",
+                   (body.get("bloomfield_score", ""), body.get("opponent_score", ""),
+                    body.get("result", ""), match_id))
+
+    db.commit()
+    rows = rows_to_list(db.execute("SELECT * FROM match_performances WHERE match_id = ?", (match_id,)).fetchall())
+    db.close()
+    json_response(h, {"match_id": match_id, "performances": rows}, 201)
+
+
+@route("GET", "/api/public/matches/:id/scorecard")
+def public_match_scorecard(h):
+    db = get_db()
+    match = db.execute("SELECT * FROM matches WHERE id = ?", (h._params["id"],)).fetchone()
+    if match is None:
+        db.close()
+        return error_response(h, "Match not found", 404)
+    performances = rows_to_list(db.execute("SELECT * FROM match_performances WHERE match_id = ?", (h._params["id"],)).fetchall())
+    db.close()
+    json_response(h, {"match": row_to_dict(match), "performances": performances})
 
 
 # ─── Admin: Image Upload ─────────────────────────────────────────

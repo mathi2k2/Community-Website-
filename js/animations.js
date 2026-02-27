@@ -114,5 +114,15 @@ const ScrollAnimations = (() => {
     initCounters();
   }
 
-  return { init };
+  /**
+   * Re-observe newly added .reveal-up elements (called after API hydration).
+   */
+  function reobserve() {
+    if (!observer) return;
+    document.querySelectorAll(".reveal-up:not(.revealed)").forEach((el) => {
+      observer.observe(el);
+    });
+  }
+
+  return { init, reobserve };
 })();

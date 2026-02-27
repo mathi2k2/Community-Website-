@@ -1,0 +1,34 @@
+# ═══════════════════════════════════════════════════
+# Bloomfield BCCC — Background Agents systemd unit
+# ═══════════════════════════════════════════════════
+#
+# Install:
+#   sudo cp deploy/bccc-agents.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now bccc-agents
+# ═══════════════════════════════════════════════════
+
+[Unit]
+Description=Bloomfield BCCC Background Agents
+After=bccc-api.service
+
+[Service]
+Type=simple
+User=bccc
+Group=bccc
+WorkingDirectory=/opt/bccc
+EnvironmentFile=/opt/bccc/.env
+ExecStart=/opt/bccc/.venv/bin/python backend/agents.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/bccc/backend
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

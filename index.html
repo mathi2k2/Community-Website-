@@ -54,6 +54,7 @@
           <li><a href="#about" class="nav__link">About</a></li>
           <li><a href="#events" class="nav__link">Events</a></li>
           <li><a href="#cricket" class="nav__link">Cricket</a></li>
+          <li><a href="#matches" class="nav__link">Matches</a></li>
           <li><a href="#gallery" class="nav__link">Gallery</a></li>
           <li><a href="#faq" class="nav__link">FAQ</a></li>
           <li><a href="#contact" class="nav__link nav__link--cta">Join Us</a></li>
@@ -502,6 +503,28 @@
     </section>
 
     <!-- ═══════════════════════════════════════════ -->
+    <!-- MATCHES & SCORECARDS                       -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="section matches" id="matches" aria-labelledby="matches-heading">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__label reveal-up">Results</span>
+          <h2 class="section__title reveal-up" id="matches-heading">
+            Match <span class="text-accent">Results</span>
+          </h2>
+          <p class="section__description reveal-up">
+            Track Bloomfield CC's performance across all divisions.
+          </p>
+        </header>
+        <div id="matches-container" class="reveal-up">
+          <div class="empty-state-front">
+            <p>Match results will appear here once the season begins.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
     <!-- GALLERY SECTION                            -->
     <!-- ═══════════════════════════════════════════ -->
     <section class="section gallery" id="gallery" aria-labelledby="gallery-heading">
@@ -808,6 +831,7 @@
   <script src="js/navigation.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/components.js"></script>
+  <script src="js/api.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

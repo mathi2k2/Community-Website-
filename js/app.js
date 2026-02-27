@@ -10,4 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
   Navigation.init();
   ScrollAnimations.init();
   Components.init();
+
+  // Load live data from backend API (falls back to static content)
+  if (typeof SiteAPI !== "undefined") {
+    SiteAPI.init();
+  }
 });

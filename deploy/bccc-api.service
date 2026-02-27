@@ -1,0 +1,38 @@
+# ═══════════════════════════════════════════════════
+# Bloomfield BCCC — API Server systemd unit
+# ═══════════════════════════════════════════════════
+#
+# Install:
+#   sudo cp deploy/bccc-api.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now bccc-api
+#
+# Logs:
+#   journalctl -u bccc-api -f
+# ═══════════════════════════════════════════════════
+
+[Unit]
+Description=Bloomfield BCCC API Server
+After=network.target
+
+[Service]
+Type=simple
+User=bccc
+Group=bccc
+WorkingDirectory=/opt/bccc
+EnvironmentFile=/opt/bccc/.env
+ExecStart=/opt/bccc/.venv/bin/python backend/server.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/bccc/backend /opt/bccc/assets/uploads
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

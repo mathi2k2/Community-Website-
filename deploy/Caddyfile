@@ -1,0 +1,52 @@
+# ═══════════════════════════════════════════════════
+# Bloomfield BCCC — Caddy Reverse Proxy Config
+# ═══════════════════════════════════════════════════
+#
+# Replace "bloomfieldcc.ca" with your actual domain.
+# Caddy auto-provisions HTTPS via Let's Encrypt.
+#
+# Install: https://caddyserver.com/docs/install
+# Run:     sudo caddy run --config /etc/caddy/Caddyfile
+# ═══════════════════════════════════════════════════
+
+bloomfieldcc.ca {
+    # ── API traffic → Python backend on :5050 ──
+    handle /api/* {
+        reverse_proxy localhost:5050
+    }
+
+    handle /health {
+        reverse_proxy localhost:5050
+    }
+
+    # ── Uploaded images ──
+    handle /assets/uploads/* {
+        root * /opt/bccc
+        file_server
+    }
+
+    # ── Static frontend ──
+    handle {
+        root * /opt/bccc
+        try_files {path} /index.html
+        file_server
+    }
+
+    # ── Security headers ──
+    header {
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Permissions-Policy "camera=(), microphone=(), geolocation=()"
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    }
+
+    # ── Gzip ──
+    encode gzip
+
+    # ── Logs ──
+    log {
+        output file /var/log/caddy/bccc-access.log
+        format json
+    }
+}
