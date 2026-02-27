@@ -32,3 +32,10 @@ Desktop.ini
 
 # Misc
 *.map
+
+# Python & DB
+__pycache__/
+*.pyc
+backend/bccc.db
+assets/uploads/*
+!assets/uploads/.gitkeep

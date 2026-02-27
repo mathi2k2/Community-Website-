@@ -1,0 +1,6 @@
+# Bloomfield BCCC Backend Dependencies
+# No external frameworks — uses Python stdlib
+# Optional integrations below:
+
+# Stripe (uncomment when ready for card payments)
+# stripe>=7.0.0
